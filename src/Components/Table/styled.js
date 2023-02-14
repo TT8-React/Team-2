@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const StyledTable = styled.table`
  border-collapse: collapse;
-    margin-left: 40px;
-    margin-top: 250px;
+    margin-top: 150px;
 
     th{
       background-color: #E5E5E5;
@@ -25,4 +24,9 @@ export const StyledTable = styled.table`
       justify-content: center;
       gap: 0.75rem;
     }
+
+    .icons-div > img{
+      cursor: pointer;
+    }
+
 `
