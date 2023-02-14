@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-export const Title=styled.h1`
+export const Text = styled.p`
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 16px;
+    line-height: 19px;
     color: #000000;
+    span{
+        color:#FF0000;
+    }
 `
