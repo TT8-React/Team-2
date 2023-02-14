@@ -7,7 +7,7 @@ export const FormWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 522px;
+    width:35%;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 10%;
 `
