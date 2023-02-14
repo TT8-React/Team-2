@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import DelIcon from '../../Assets/Delete.png'
 import EditIcon from '../../Assets/Edit.png'
 import { StyledTable } from './styled'
