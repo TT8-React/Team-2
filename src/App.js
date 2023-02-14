@@ -1,10 +1,5 @@
-import Layout from "./Components/Layout";
 function App() {
-  return (
-    <div className="App">
-      <Layout path="Dashboard">testing</Layout>
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;
