@@ -1,35 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-
-const Side = styled.div`
-  background-color: #efefef;
-  width: 20%;
-  position: fixed;
-  padding: 1.5rem 0;
-  top: 0;
-  left: 0;
-  height: 100vh;
-`;
-
-const SideItem = styled.div`
-  margin: 2rem 0;
-  font-weight: bold;
-`;
-const Content = styled.div`
-  height: 50%;
-  width: 80%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-const Logo = styled.div`
-  background: #d9d9d9;
-  padding: 1rem 3rem;
-  font-weight: bold;
-  text-align: center;
-`;
-const Items = styled.div``;
+import { Side, Content, Items, SideItem, Logo } from "./style";
 const SideBar = () => {
   return (
     <Side>
@@ -50,12 +20,3 @@ const SideBar = () => {
 };
 
 export default SideBar;
-
-// const FormItem = ({ name, label }) => {
-//   return (
-//     <WrapperItem>
-//       <label htmlFor={name}>{label}</label>
-//       <Input type="text" placeholder={`Enter ${name}`} id={name} name={name} />
-//     </WrapperItem>
-//   );
-// };
