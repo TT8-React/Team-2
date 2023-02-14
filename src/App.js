@@ -6,11 +6,6 @@ import Report from "./Pages/Report";
 function App() {
   return (
     <div className="App">
-      <SideBar />
-      <Main>
-        <Report/>
-      </Main>
-      <Navbar />
     </div>
   );
 }
