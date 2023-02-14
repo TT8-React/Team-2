@@ -1,11 +1,11 @@
 import React from 'react'
 import {WrapperItem,Input} from './style';
 
-const FormItem = ({name,label,placeholder}) => {
+const FormItem = ({name,label,placeholder,type}) => {
     return (
         <WrapperItem>
             <label htmlFor={name}>{label}</label>
-            <Input type="text" placeholder={placeholder} id={name} name={name}/>
+            <Input type={type} placeholder={placeholder} id={name} name={name}/>
         </WrapperItem>
     )
 }
