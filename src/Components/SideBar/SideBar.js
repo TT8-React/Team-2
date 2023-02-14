@@ -13,6 +13,7 @@ const Side = styled.div`
 
 const SideItem = styled.div`
   margin: 2rem 0;
+  cursor: pointer;
   font-weight: bold;
 `;
 const Content = styled.div`
@@ -28,6 +29,7 @@ const Logo = styled.div`
   padding: 1rem 3rem;
   font-weight: bold;
   text-align: center;
+  cursor: pointer;
 `;
 const Items = styled.div``;
 const SideBar = () => {
@@ -50,12 +52,3 @@ const SideBar = () => {
 };
 
 export default SideBar;
-
-// const FormItem = ({ name, label }) => {
-//   return (
-//     <WrapperItem>
-//       <label htmlFor={name}>{label}</label>
-//       <Input type="text" placeholder={`Enter ${name}`} id={name} name={name} />
-//     </WrapperItem>
-//   );
-// };
