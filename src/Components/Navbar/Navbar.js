@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import avatar from "./user.png";
+import avatar from "../../Assets/Avatar.png";
 const Nav = styled.div`
   background-color: #4f4f4f;
   color: #fff;

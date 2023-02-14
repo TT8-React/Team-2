@@ -1,8 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import AnalysisMenu from "./AnalysisMenu";
-import SideMenu from "./SideMenu";
 
 const Side = styled.div`
   background-color: #efefef;
@@ -12,42 +9,53 @@ const Side = styled.div`
   top: 0;
   left: 0;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5em;
 `;
-const Flex = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
+
 const SideItem = styled.div`
-  margin: 0.2rem 0;
+  margin: 2rem 0;
+  font-weight: bold;
 `;
+const Content = styled.div`
+  height: 50%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+const Logo = styled.div`
+  background: #d9d9d9;
+  padding: 1rem 3rem;
+  font-weight: bold;
+  text-align: center;
+`;
+const Items = styled.div``;
 const SideBar = () => {
   return (
     <Side>
-      <h4>Logo</h4>
-      <Flex>
-        <SideItem>
-          <Link>Dashboard</Link>
-        </SideItem>
-        <SideItem>
-          <Link>Company details</Link>
-        </SideItem>
-        <SideItem>
-          <SideMenu title="Report" />
-        </SideItem>
-        <SideItem>
-          <Link>Data upload</Link>
-        </SideItem>
-        <SideItem>
-          <AnalysisMenu title="Analytics" />
-        </SideItem>
-      </Flex>
+      <Content>
+        <div>
+          <Logo>Logo</Logo>
+        </div>
+        <Items>
+          <SideItem>Dashboard</SideItem>
+          <SideItem>Company details</SideItem>
+          <SideItem>Report</SideItem>
+          <SideItem>Data upload</SideItem>
+          <SideItem>Analytics</SideItem>
+        </Items>
+      </Content>
     </Side>
   );
 };
 
 export default SideBar;
+
+// const FormItem = ({ name, label }) => {
+//   return (
+//     <WrapperItem>
+//       <label htmlFor={name}>{label}</label>
+//       <Input type="text" placeholder={`Enter ${name}`} id={name} name={name} />
+//     </WrapperItem>
+//   );
+// };
