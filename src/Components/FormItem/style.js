@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const WrapperItem = styled.div`
     color:#52525C;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
     label{
         font-family: 'Inter';
         font-style: normal;
