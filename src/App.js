@@ -1,7 +1,5 @@
-
-import Verified from './Pages/Verified/index';
 function App() {
-  return <div className="App"><Verified/></div>;
+  return <div className="App"></div>;
 }
 
 export default App;
