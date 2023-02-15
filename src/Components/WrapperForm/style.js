@@ -9,5 +9,5 @@ export const FormWrapper = styled.div`
     align-items: center;
     width:35%;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 5%;
 `

@@ -25,9 +25,9 @@ export const Input = styled.input`
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
-        font-size: 15px;
+        font-size: 13px;
         line-height: 24px;
-        color: #000000;
+        color: #d9d9d9;
     }
 
 `
