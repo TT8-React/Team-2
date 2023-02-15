@@ -1,8 +1,10 @@
 import React from 'react'
-import {Btn} from './style';
+
+import { Btn } from './style';
+
 const FormBtn = ({name}) => {
     return (
-        <Btn>{name}</Btn>
+        <Btn type='submit'>{name}</Btn>
     )
 }
 

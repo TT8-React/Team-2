@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Side, Content, Items, SideItem, Logo } from "./style";
+
 const SideBar = () => {
   return (
     <Side>

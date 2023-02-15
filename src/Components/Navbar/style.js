@@ -9,6 +9,7 @@ export const Nav = styled.div`
   left: 20%;
   padding: 1rem;
   width: 80%;
+  height: 11%;
 `;
 export const Flex = styled.div`
   width: 90%;
