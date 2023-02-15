@@ -8,6 +8,5 @@ export const FormWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width:35%;
-    margin: auto;
-    margin-top: 5%;
+    margin: 5% auto;
 `

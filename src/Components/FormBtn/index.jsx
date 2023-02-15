@@ -1,8 +1,8 @@
 import React from 'react'
 import {Btn} from './style';
-const FormBtn = ({name}) => {
+const FormBtn = ({name,type}) => {
     return (
-        <Btn>{name}</Btn>
+        <Btn type={type}>{name}</Btn>
     )
 }
 
