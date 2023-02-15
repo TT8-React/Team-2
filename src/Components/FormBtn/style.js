@@ -8,4 +8,6 @@ export const Btn=styled.button`
     font-size: 16px;
     line-height: 19px;
     padding: 10px 16px;
+    margin-bottom:62px;
+    cursor:pointer;
 `
