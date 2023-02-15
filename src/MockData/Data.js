@@ -24,3 +24,18 @@ export const TwoColsTableData = [
   { id: 11, body: "Authorized Capital  " },
   { id: 12, body: "Paid Up Capital" },
 ];
+
+// Manual Data Tab form
+
+export const TwoColFormData = [
+  "Report1",
+  "Report2",
+  "Report3",
+  "Report4",
+  "Report5",
+  "Report6",
+  "Report7",
+  "Report8",
+  "Report9",
+  "Report10",
+];
