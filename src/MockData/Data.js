@@ -39,3 +39,43 @@ export const TwoColFormData = [
   "Report9",
   "Report10",
 ];
+
+
+export const ProfileDetailsData = [
+  {
+    id: 1,
+    name: 'Name'
+  },
+  {
+    id: 2,
+    name: 'Test1'
+  },
+  {
+    id: 3,
+    name: 'Test2'
+  },
+  {
+    id: 4,
+    name: 'Test3'
+  },
+  {
+    id: 5,
+    name: 'Test4'
+  },
+  {
+    id: 6,
+    name: 'Test5'
+  },
+  {
+    id: 7,
+    name: 'Test6'
+  },
+  {
+    id: 8,
+    name: 'Test7'
+  },
+  {
+    id: 9,
+    name: 'Test8'
+  },
+]
