@@ -2,7 +2,7 @@ import React from "react";
 import Main from "../Main/Main";
 import Navbar from "../Navbar/Navbar";
 import SideBar from "../SideBar/SideBar";
-const index = ({ path, children }) => {
+const Layout = ({ path, children }) => {
   return (
     <div>
       <Navbar path={path} />
@@ -13,4 +13,4 @@ const index = ({ path, children }) => {
   );
 };
 
-export default index;
+export default Layout;
