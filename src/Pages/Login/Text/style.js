@@ -8,5 +8,5 @@ export const TextStyle = styled.p`
     line-height: 19px;
     color: #000000;
     cursor:pointer;
-    margin:0;
+    padding-top: 10px;
 `

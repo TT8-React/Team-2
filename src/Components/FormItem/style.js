@@ -5,7 +5,7 @@ export const WrapperItem = styled.div`
     width: 360px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 25px;
+    margin-top: 5%;
     label{
         font-family: 'Inter';
         font-style: normal;
