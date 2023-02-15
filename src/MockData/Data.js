@@ -1,3 +1,4 @@
+
 // Accordion Data
 export const AccordionData = [
   "Company Details",
@@ -40,42 +41,50 @@ export const TwoColFormData = [
   "Report10",
 ];
 
-
 export const ProfileDetailsData = [
   {
     id: 1,
-    name: 'Name'
+    name: "Name",
   },
   {
     id: 2,
-    name: 'Test1'
+    name: "Test1",
   },
   {
     id: 3,
-    name: 'Test2'
+    name: "Test2",
   },
   {
     id: 4,
-    name: 'Test3'
+    name: "Test3",
   },
   {
     id: 5,
-    name: 'Test4'
+    name: "Test4",
   },
   {
     id: 6,
-    name: 'Test5'
+    name: "Test5",
   },
   {
     id: 7,
-    name: 'Test6'
+    name: "Test6",
   },
   {
     id: 8,
-    name: 'Test7'
+    name: "Test7",
   },
   {
     id: 9,
-    name: 'Test8'
+    name: "Test8",
   },
-]
+];
+
+export const TransferListDate = [
+  { id: 1, test: "Lorem ipsum text1" },
+  { id: 2, test: "Lorem ipsum text2" },
+  { id: 3, test: "Lorem ipsum text3" },
+  { id: 4, test: "Lorem ipsum text4" },
+  { id: 5, test: "Lorem ipsum text5" },
+  { id: 6, test: "Lorem ipsum text6" },
+];
