@@ -3,18 +3,22 @@ import FormBtn from "../FormBtn";
 
 import FormItem from "../FormItem/index";
 
-import { Container, Form } from "./style";
+import { Container, FormElement } from "./style";
 
 const TowColForm = ({ data }) => {
   return (
-    <Form>
+    <FormElement>
       <Container>
         {data?.map((item) => {
-          return <FormItem key={item} name={item} label={item} />;
+          return (
+            <FormItem key={item} name={item} label={item} width={"270px"} />
+          );
         })}
       </Container>
-      <FormBtn name="Submit" />
-    </Form>
+      <div style={{ margin: "2rem 32%" }}>
+        <FormBtn name="Submit" />
+      </div>
+    </FormElement>
   );
 };
 
