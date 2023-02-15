@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const Content = styled.div`
   margin-left: 20%;
-  margin-top: 6em;
-  padding: 0 1rem;
+  margin-top: 5em;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
