@@ -12,7 +12,7 @@ export const Text = styled.p`
     }
 `
 export const Wrapper = styled.div`
-    padding:2rem;
+    padding:1rem;
 `
 export const Circle = styled.div`
     display:inline-block;
