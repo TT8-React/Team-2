@@ -1,4 +1,3 @@
-
 // Accordion Data
 export const AccordionData = [
   "Company Details",
