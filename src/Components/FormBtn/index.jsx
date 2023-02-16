@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
+import { Btn } from "./style";
+const FormBtn = ({ name }) => {
+  return <Btn type="submit">{name}</Btn>;
+};
 
-import { Btn } from './style';
-
-const FormBtn = ({name}) => {
-    return (
-        <Btn type='submit'>{name}</Btn>
-    )
-}
-
-export default FormBtn
+export default FormBtn;
