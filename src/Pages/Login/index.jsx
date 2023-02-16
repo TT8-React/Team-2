@@ -9,7 +9,7 @@ import { FlexCenter } from './../../global/style';
 
 const Login = () => {
     return (
-        <div>
+        <>
             <WrapperForm>
                 <form>
                     <FormTitle title="LOGIN"/>
@@ -19,10 +19,10 @@ const Login = () => {
                     <FlexCenter>
                         <FormBtn name="LOGIN"/>
                     </FlexCenter>
-                    <TextForm text="Don’t have an account ?" spanText="Sign up"/>
+                    <TextForm text="Don’t have an account ?" spanText="Sign up" linkTO='/signup' />
                 </form>
             </WrapperForm>
-        </div>
+        </>
     )
 }
 

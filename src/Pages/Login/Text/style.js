@@ -6,7 +6,10 @@ export const TextStyle = styled.p`
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    color: #000000;
     cursor:pointer;
     margin:0;
+    &>a{
+        text-decoration: none;
+        color: #000000;
+    }
 `

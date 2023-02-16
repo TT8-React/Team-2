@@ -1,5 +1,14 @@
+import { useState } from "react";
+import { Authorized, NotAuthorized } from "./Routes";
+
 function App() {
-  return <div className="App"></div>;
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
+  return (
+    <div className="App">
+      {isAuthorized ? <Authorized /> : <NotAuthorized />}
+    </div>
+  );
 }
 
 export default App;

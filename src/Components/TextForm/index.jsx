@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 import {Text} from './style';
-const TextForm = ({text,spanText}) => {
+
+const TextForm = ({text,spanText,linkTO}) => {
     return (
-        <Text>{text}<span>{spanText}</span></Text>
+        <Text>{text}<Link to={linkTO}>{spanText}</Link></Text>
     )
 }
 

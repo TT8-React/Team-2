@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const WrapperItem = styled.div`
     color:#52525C;
-    width: 360px;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
     margin-bottom: 25px;
     label{
         font-family: 'Inter';
@@ -20,6 +20,7 @@ export const Input = styled.input`
     border: 2px solid #D9D9D9;
     border-radius: 8px;
     padding: 12px 16px;
+    width: 100%;
     margin-top: 8px;
     &::placeholder{
         font-family: 'Inter';

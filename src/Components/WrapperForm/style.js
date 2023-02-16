@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 export const FormWrapper = styled.div`
-    background: #F8F8F8;
-    border: 1px solid #000000;
-    border-radius: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:35%;
+    background: #F8F8F8;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    width:26%;
     margin: auto;
-    margin-top: 5%;
+    padding: 2rem ;
+    margin-top: 6%;
+    &>form{
+        width: 100%;
+    }
 `
