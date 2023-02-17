@@ -36,8 +36,8 @@ const SideBar = () => {
           <SideItem
             active={activeItem === "report"}
             onClick={() => {
-              setOpenReport(!openReport);
               handleItemClick("report");
+              setOpenReport(!openReport);
             }}
           >
             <ALink to={PATHS.REPORT} color="#000">
@@ -60,8 +60,8 @@ const SideBar = () => {
           <SideItem
             active={activeItem === "analytics"}
             onClick={() => {
-              setOpenAnalytics(!openAnalytics);
               handleItemClick("analytics");
+              setOpenAnalytics(!openAnalytics);
             }}
           >
             Analytics <img src={openAnalytics ? opened : closed} alt="arrow" />

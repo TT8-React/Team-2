@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Customize from "../Pages/Customize";
+import Customize from "../Pages/Reports/Customize";
 import DataUpload from "../Pages/DataUpload";
 import Gri from "../Pages/Reports/Gri";
 import Sebi from "../Pages/Reports/Sebi";
