@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const WrapperItem = styled.div`
   color: #52525c;
   display: flex;
-  width: ${(props) => props.width || "360px"};
+  width: ${(props) => props.width || "100%"};
   flex-direction: column;
   margin-top: 5%;
   label {

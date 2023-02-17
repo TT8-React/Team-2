@@ -9,5 +9,5 @@ export const FlexCenter = styled.div`
 `;
 export const ALink = styled(Link)`
   text-decoration: none;
-  color: #000;
+  color: ${(props) => props.color};
 `;
