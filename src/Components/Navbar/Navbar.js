@@ -39,7 +39,7 @@ const Navbar = ({ path }) => {
             vertical: "bottom",
             horizontal: "left",
           }}
-          sx={{ marginTop: "1rem" }}
+          sx={{ margin: "0.5rem auto" }}
         >
           <Typography sx={{ p: 2, background: "#FFFFFF", color: "#000" }}>
             Profile Details
