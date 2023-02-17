@@ -11,6 +11,7 @@ import Error from "../../Components/Error";
 import Text from "./Text";
 
 import { FlexCenter } from "./../../global/style";
+
 const Login = () => {
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -69,4 +70,5 @@ const Login = () => {
     </WrapperForm>
   );
 };
+
 export default Login;
