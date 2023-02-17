@@ -95,7 +95,7 @@ const Signup = () => {
                     <FlexCenter>
                         <FormBtn name="LOGIN"/>
                     </FlexCenter>
-                    <TextForm text="Already have an account ?" spanText="Login"/>
+                    <TextForm text="Already have an account ?" spanText="Login" linkTO='/login'/>
                 </form>
             </WrapperForm>
         </>
