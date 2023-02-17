@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import WrapperForm from "./../../Components/WrapperForm/index";
 import FormTitle from "./../../Components/FormTitle/index";
@@ -11,8 +13,11 @@ import Error from "../../Components/Error";
 import Text from "./Text";
 
 import { FlexCenter } from "./../../global/style";
+import { API_URL } from "./../../config/api";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Invalid email")
@@ -20,15 +25,28 @@ const Login = () => {
     password: Yup.string().required("Please Enter your password"),
   });
 
+  const onSubmit = async ({ email, password }) => {
+    setLoading(true);
+    const res = await axios
+      .post(`${API_URL}/users/login`, { email, password })
+      .catch((err) => {
+        console.log(err.message);
+      })
+      .finally(() => setLoading(false));
+
+    if (res) {
+      console.log("you are logged in successfully");
+      navigate("/dashboard");
+    }
+  };
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log("values", values);
-    },
+    onSubmit,
   });
 
   return (
@@ -59,7 +77,7 @@ const Login = () => {
         )}{" "}
         <Text text="Forget password ?" />
         <FlexCenter>
-          <FormBtn name="LOGIN" type="submit" />
+          <FormBtn name={loading ? "Loading...." : "LOGIN"} type="submit" />
         </FlexCenter>{" "}
         <TextForm
           text="Don’t have an account ?"
