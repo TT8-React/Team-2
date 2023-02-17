@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+// libraries
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+//  components
 import WrapperForm from "./../../Components/WrapperForm/index";
 import FormTitle from "./../../Components/FormTitle/index";
 import FormItem from "./../../Components/FormItem/index";
@@ -11,8 +12,8 @@ import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
 import Error from "../../Components/Error";
 import Text from "./Text";
-
 import { FlexCenter } from "./../../global/style";
+//  API
 import { API_URL } from "./../../config/api";
 
 const Login = () => {
@@ -82,7 +83,7 @@ const Login = () => {
         <TextForm
           text="Don’t have an account ?"
           spanText="Sign up"
-          linkTO="/signup"
+          linkTo="/signup"
         />
       </form>{" "}
     </WrapperForm>

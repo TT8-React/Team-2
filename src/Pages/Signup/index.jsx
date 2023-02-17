@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 
-//library
+//libraries
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
+
+import { useNavigate } from "react-router-dom";
 
 //components
 import WrapperForm from "./../../Components/WrapperForm/index";
@@ -12,9 +15,8 @@ import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
 import { FlexCenter } from "../../global/style";
 import Error from "../../Components/Error";
-import { axios } from "axios";
+//  API
 import { API_URL } from "./../../config/api";
-import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -46,7 +48,7 @@ const Signup = () => {
   const onSubmit = async ({ name, email, password }) => {
     setLoading(true);
     const res = await axios
-      .post(`${API_URL}/users/login`, { email, password, name })
+      .post(`${API_URL}/users/signup`, { email, password, name })
       .catch((err) => {
         console.log(err.message);
       })
@@ -76,11 +78,10 @@ const Signup = () => {
             onChange={formik.handleChange}
             value={formik.values.name}
             onBlur={formik.handleBlur}
-          />
+          />{" "}
           {formik.touched.name && formik.errors.name && (
             <Error msg={formik.errors.name} />
-          )}
-
+          )}{" "}
           <FormItem
             label="Email ID"
             name="email"
@@ -88,11 +89,10 @@ const Signup = () => {
             onChange={formik.handleChange}
             value={formik.values.email}
             onBlur={formik.handleBlur}
-          />
+          />{" "}
           {formik.touched.email && formik.errors.email && (
             <Error msg={formik.errors.email} />
-          )}
-
+          )}{" "}
           <FormItem
             label="Password"
             name="password"
@@ -100,21 +100,20 @@ const Signup = () => {
             onChange={formik.handleChange}
             value={formik.values.password}
             onBlur={formik.handleBlur}
-          />
+          />{" "}
           {formik.touched.password && formik.errors.password && (
             <Error msg={formik.errors.password} />
-          )}
-
+          )}{" "}
           <FlexCenter>
-            <FormBtn name={loading ? "Loading" : "LOGIN"} />
-          </FlexCenter>
+            <FormBtn name={loading ? "Loading" : "Sign up"} />{" "}
+          </FlexCenter>{" "}
           <TextForm
             text="Already have an account ?"
             spanText="Login"
-            linkTO="/login"
-          />
-        </form>
-      </WrapperForm>
+            linkTo={"/login"}
+          />{" "}
+        </form>{" "}
+      </WrapperForm>{" "}
     </>
   );
 };
