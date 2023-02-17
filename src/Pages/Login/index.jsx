@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-// libraries
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-//  components
+
 import WrapperForm from "./../../Components/WrapperForm/index";
 import FormTitle from "./../../Components/FormTitle/index";
 import FormItem from "./../../Components/FormItem/index";
 import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
-import Error from "../../Components/ErrorBoundary";
+import Error from "../../Components/Error";
 import Text from "./Text";
+
 import { FlexCenter } from "./../../global/style";
-//  API
 import { API_URL } from "./../../config/api";
 
 const Login = () => {
@@ -25,10 +24,7 @@ const Login = () => {
       .required("Please Enter your email"),
     password: Yup.string().required("Please Enter your password"),
   });
-  const initialValues = {
-    email: "",
-    password: "",
-  };
+
   const onSubmit = async ({ email, password }) => {
     setLoading(true);
     const res = await axios
@@ -37,6 +33,7 @@ const Login = () => {
         console.log(err.message);
       })
       .finally(() => setLoading(false));
+
     if (res) {
       console.log("you are logged in successfully");
       navigate("/dashboard");
@@ -44,7 +41,10 @@ const Login = () => {
   };
 
   const formik = useFormik({
-    initialValues,
+    initialValues: {
+      email: "",
+      password: "",
+    },
     validationSchema,
     onSubmit,
   });
@@ -82,7 +82,7 @@ const Login = () => {
         <TextForm
           text="Don’t have an account ?"
           spanText="Sign up"
-          linkTo="/signup"
+          linkTO="/signup"
         />
       </form>{" "}
     </WrapperForm>
