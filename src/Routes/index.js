@@ -1,7 +1,6 @@
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
-
 // pages
 const Signup = lazy(() => import("../Pages/Signup"));
 const Login = lazy(() => import("../Pages/Login"));
@@ -11,7 +10,7 @@ const ForgetPassword = lazy(() => import("../Pages/ForgetPassword"));
 export const PATHS = {
   SIGNUP: "/signup",
   LOGIN: "/login",
-  FORGETPASSWORD: '/forgetPassword'
+  FORGETPASSWORD: "/forgetPassword",
 };
 
 export function NotAuthorized() {
