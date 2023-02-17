@@ -11,6 +11,7 @@ import Layout from "../Layout";
 
 //  Data
 import { TwoColFormData } from "../../MockData/Data";
+import DataTab from "../DataTab";
 
 export default function Upload() {
   const [filePath, setFilePath] = useState();
@@ -39,8 +40,8 @@ export default function Upload() {
 
   return (
     <>
-      <Layout path="Data upload">
-        <Tab>
+    <DataTab />
+        {/* <Tab>
           <ul>
             <TabItem
               onClick={() => setTab("manual")}
@@ -55,12 +56,12 @@ export default function Upload() {
               Bulk upload tab{" "}
             </TabItem>{" "}
           </ul>{" "}
-        </Tab>{" "}
-        {tab === "manual" ? (
+        </Tab>{" "} */}
+        {/* {tab === "manual" ? (
           <ReportGrid>
             <TowColForm data={TwoColFormData} />{" "}
           </ReportGrid>
-        ) : (
+        ) : ( */}
           <div style={{ width: "100%" }}>
             {" "}
             <UploadContainer>
@@ -82,8 +83,7 @@ export default function Upload() {
               </UploadForm>{" "}
             </UploadContainer>{" "}
           </div>
-        )}{" "}
-      </Layout>{" "}
+        {/* )} */}
     </>
   );
 }

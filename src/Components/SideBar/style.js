@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+
 import styled from "styled-components";
+
 export const Side = styled.div`
   background-color: #efefef;
   width: 20%;

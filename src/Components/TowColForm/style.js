@@ -5,7 +5,6 @@ export const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 0.2rem 1rem;
   width: 80%;
-  overflow-x: hidden;
 `;
 export const FormElement = styled.form`
   width: 90%;

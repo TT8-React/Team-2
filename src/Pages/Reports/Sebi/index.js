@@ -11,7 +11,7 @@ import { TwoColFormData } from "../../../MockData/Data";
 
 const Sebi = () => {
   return (
-    <Layout path="SEBI Report">
+    <>
       <div
         style={{
           marginLeft: "1100px",
@@ -23,7 +23,7 @@ const Sebi = () => {
       <ReportGrid>
         <TowColForm data={TwoColFormData} />
       </ReportGrid>
-    </Layout>
+    </>
   );
 };
 

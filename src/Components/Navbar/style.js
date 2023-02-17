@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import avatar from "../../Assets/Avatar.png";
 
-export const Nav = styled.div`
+export const Nav = styled.nav`
   background-color: #4f4f4f;
   color: #fff;
   position: fixed;
@@ -10,6 +10,7 @@ export const Nav = styled.div`
   padding: 1rem;
   width: 80%;
   height: 11%;
+  z-index: 100;
 `;
 export const Flex = styled.div`
   width: 90%;
@@ -24,4 +25,8 @@ export const Avatar = styled.div`
   background-size: cover;
   width: 45px;
   height: 45px;
+`;
+export const PageName = styled.p`
+  text-transform: capitalize;
+  font-weight: bold;
 `;

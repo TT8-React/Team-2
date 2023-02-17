@@ -1,9 +1,16 @@
-import { lazy, Suspense } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { lazy } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Customize from "../Pages/Reports/Customize";
-import DataUpload from "../Pages/DataUpload";
+import DataUpload from "../Pages/DataUpload/Upload";
 import Gri from "../Pages/Reports/Gri";
 import Sebi from "../Pages/Reports/Sebi";
+import Navbar from "../Components/Navbar/Navbar";
+import SideBar from "../Components/SideBar/SideBar";
+import { Main } from "../Components/Upload/style";
+import Manual from "../Pages/DataUpload/Manual";
+import Environment from "../Pages/Analytic/Environment";
+import Governance from "../Pages/Analytic/Governance";
+import Social from "../Pages/Analytic/Social";
 
 // pages
 const Signup = lazy(() => import("../Pages/Signup"));
@@ -21,41 +28,60 @@ export const PATHS = {
   FORGETPASSWORD: "/forgetPassword",
   DASHBOARD: "/dashboard",
   PROFILEDETAILS: "/profile",
-  MYREPORT: "/myreport",
+  MYREPORT: "/myReport",
   REPORT: "/report",
   SEBI: "/sebi",
   GRI: "/gri",
   CUSTOMIZE: "/customize",
-  DATAUPLOAD: "/dataupload",
+  MANUAL: "/manual",
+  UPLOAD: "/dataUpload",
+  ENVIRONMENT: "/environment",
+  GOVERNANCE: "/governance",
+  SOCIAL: "/social",
 };
 
 export function NotAuthorized() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Routes>
-        <Route path={PATHS.LOGIN} element={<Login />} />
-        <Route path={PATHS.SIGNUP} element={<Signup />} />
-        <Route path={PATHS.FORGETPASSWORD} element={<ForgetPassword />} />
-        <Route path="*" element={<Navigate to={PATHS.LOGIN} />} />
-      </Routes>
-    </Suspense>
+    <Routes>
+      <Route index path={PATHS.LOGIN} element={<Login />} />
+      <Route path={PATHS.SIGNUP} element={<Signup />} />
+      <Route path={PATHS.FORGETPASSWORD} element={<ForgetPassword />} />
+      <Route path="*" element={<Navigate to={PATHS.LOGIN} />} />
+    </Routes>
   );
 }
 
 export function Authorized() {
+  const { pathname } = useLocation();
+
+  const getPageName = (pathname) => {
+    const str = pathname.substr(1);
+    return str
+      .split(/(?=[A-Z])/)
+      .join(" ")
+      .toUpperCase();
+  };
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Routes>
-        <Route path={PATHS.DASHBOARD} element={<Dashboard />} />
-        <Route path={PATHS.PROFILEDETAILS} element={<ProfileDetails />} />
-        <Route path={PATHS.MYREPORT} element={<MyReport />} />
-        <Route path={PATHS.REPORT} element={<Report />} />
-        <Route path={PATHS.CUSTOMIZE} element={<Customize />} />
-        <Route path={PATHS.SEBI} element={<Sebi />} />
-        <Route path={PATHS.GRI} element={<Gri />} />
-        <Route path={PATHS.DATAUPLOAD} element={<DataUpload />} />
-        <Route path="*" element={<Navigate to={PATHS.DASHBOARD} />} />
-      </Routes>
-    </Suspense>
+    <>
+      <Navbar path={getPageName(pathname)} />
+      <SideBar />
+      <Main>
+        <Routes>
+          <Route index path={PATHS.DASHBOARD} element={<Dashboard />} />
+          <Route path={PATHS.PROFILEDETAILS} element={<ProfileDetails />} />
+          <Route path={PATHS.MYREPORT} element={<MyReport />} />
+          <Route path={PATHS.REPORT} element={<Report />} />
+          <Route path={PATHS.CUSTOMIZE} element={<Customize />} />
+          <Route path={PATHS.SEBI} element={<Sebi />} />
+          <Route path={PATHS.GRI} element={<Gri />} />
+          <Route path={PATHS.MANUAL} element={<Manual />} />
+          <Route path={PATHS.UPLOAD} element={<DataUpload />} />
+          <Route path={PATHS.SOCIAL} element={<Social />} />
+          <Route path={PATHS.ENVIRONMENT} element={<Environment />} />
+          <Route path={PATHS.GOVERNANCE} element={<Governance />} />
+          <Route path="*" element={<Navigate to={PATHS.DASHBOARD} />} />
+        </Routes>
+      </Main>
+    </>
   );
 }
