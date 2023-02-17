@@ -25,7 +25,10 @@ const Login = () => {
       .required("Please Enter your email"),
     password: Yup.string().required("Please Enter your password"),
   });
-
+  const initialValues = {
+    email: "",
+    password: "",
+  };
   const onSubmit = async ({ email, password }) => {
     setLoading(true);
     const res = await axios
@@ -34,7 +37,6 @@ const Login = () => {
         console.log(err.message);
       })
       .finally(() => setLoading(false));
-
     if (res) {
       console.log("you are logged in successfully");
       navigate("/dashboard");
@@ -42,10 +44,7 @@ const Login = () => {
   };
 
   const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
+    initialValues,
     validationSchema,
     onSubmit,
   });
