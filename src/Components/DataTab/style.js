@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const Tab = styled.nav`
   width: 60%;
   height: 4rem;
-  margin: 1rem auto;
-  margin-top: 5%;
+  margin: 1.8rem auto;
+  margin-top: 1%;
+  margin-bottom: 0.5rem;
   font-size: 1.2rem;
   font-weight: 700;
   color: #000000;
@@ -30,9 +31,9 @@ export const TabItem = styled.li`
   text-align: center;
   display: flex;
   justify-content: center;
+  cursor: pointer;
   align-items: center;
   &.active {
-    background-color: #8f8f8f;
-    box-shadow: inset 1px 1px 5px #8f8f8f;
+    background-color: #ebebf0;
   }
 `;

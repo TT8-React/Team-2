@@ -1,7 +1,10 @@
 import React from "react";
+
+//components
 import Main from "../Main/Main";
 import Navbar from "../Navbar/Navbar";
 import SideBar from "../SideBar/SideBar";
+
 const Layout = ({ path, children }) => {
   return (
     <div>

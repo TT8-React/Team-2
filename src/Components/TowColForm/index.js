@@ -15,7 +15,7 @@ const TowColForm = ({ data }) => {
           );
         })}
       </Container>
-      <div style={{ margin: "2rem 32%" }}>
+      <div style={{ margin: "1rem 33%" }}>
         <FormBtn name="Submit" />
       </div>
     </FormElement>

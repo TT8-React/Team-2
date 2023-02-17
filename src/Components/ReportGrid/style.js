@@ -7,4 +7,5 @@ export const Grid = styled.div`
   width: 100%;
   margin-left: 10%;
   gap: 1.5rem;
+  margin-top: 1rem;
 `;

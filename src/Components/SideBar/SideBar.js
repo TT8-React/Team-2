@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import closed from "../../Assets/ClosedArrow.png";
 import opened from "../../Assets/OpenedArrow.png";
+import { ALink } from "../../global/style";
+import { PATHS } from "../../Routes";
 import { Side, Content, Items, SideItem, Logo, MenuItem } from "./style";
 
 const SideBar = () => {
@@ -23,13 +25,13 @@ const SideBar = () => {
             active={activeItem === "dashboard"}
             onClick={() => handleItemClick("dashboard")}
           >
-            Dashboard
+            <ALink to="/dashboard">Dashboard</ALink>
           </SideItem>
           <SideItem
             active={activeItem === "company_details"}
             onClick={() => handleItemClick("company_details")}
           >
-            Company details
+            <ALink to={PATHS.CUSTOMIZE}> Company details</ALink>
           </SideItem>
           <SideItem
             active={activeItem === "report"}
@@ -38,14 +40,22 @@ const SideBar = () => {
               handleItemClick("report");
             }}
           >
-            Report <img src={openReport ? opened : closed} alt="arrow" />
+            <ALink to={PATHS.REPORT} color="#000">
+              {" "}
+              Report
+            </ALink>{" "}
+            <img src={openReport ? opened : closed} alt="arrow" />
           </SideItem>
-          {openReport && <MenuItem>My Report</MenuItem>}
+          {openReport && (
+            <MenuItem>
+              <ALink to={PATHS.MYREPORT}>My Report</ALink>
+            </MenuItem>
+          )}
           <SideItem
             active={activeItem === "data_upload"}
             onClick={() => handleItemClick("data_upload")}
           >
-            Data upload
+            <ALink to={PATHS.DATAUPLOAD}> Data upload</ALink>
           </SideItem>
           <SideItem
             active={activeItem === "analytics"}
@@ -58,9 +68,15 @@ const SideBar = () => {
           </SideItem>
           {openAnalytics && (
             <>
-              <MenuItem>Environment</MenuItem>
-              <MenuItem>Social</MenuItem>
-              <MenuItem>Governance</MenuItem>
+              <MenuItem>
+                <ALink to={PATHS.MYREPORT}>Environment</ALink>
+              </MenuItem>
+              <MenuItem>
+                <ALink to={PATHS.MYREPORT}>Social</ALink>
+              </MenuItem>
+              <MenuItem>
+                <ALink to={PATHS.MYREPORT}>Governance</ALink>
+              </MenuItem>
             </>
           )}
         </Items>

@@ -9,5 +9,17 @@ export const FlexCenter = styled.div`
 `;
 export const ALink = styled(Link)`
   text-decoration: none;
-  color: ${(props) => props.color};
+  color: ${(props) => props.color || "#000"};
+`;
+export const TopSection = styled.div`
+  border-bottom: 1px solid black;
+  height: 94px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  Button {
+    margin-right: 60px;
+  }
 `;

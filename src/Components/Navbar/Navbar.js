@@ -1,5 +1,7 @@
 import { Button, Popover, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { ALink } from "../../global/style";
+import { PATHS } from "../../Routes";
 import { Nav, Flex, Avatar } from "./style";
 
 const Navbar = ({ path }) => {
@@ -18,7 +20,7 @@ const Navbar = ({ path }) => {
   return (
     <Nav>
       <Flex>
-        <div>{path}</div>
+        <div style={{ fontWeight: "bold" }}>{path}</div>
         <Avatar onClick={handleClick}>
           <Button
             variant="contained"
@@ -42,7 +44,7 @@ const Navbar = ({ path }) => {
           sx={{ margin: "0.5rem auto" }}
         >
           <Typography sx={{ p: 2, background: "#FFFFFF", color: "#000" }}>
-            Profile Details
+            <ALink to={PATHS.PROFILEDETAILS}>Profile Details</ALink>
           </Typography>
         </Popover>
       </Flex>
