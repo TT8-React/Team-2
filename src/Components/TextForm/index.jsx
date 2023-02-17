@@ -1,12 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-
-import {Text} from './style';
-
-const TextForm = ({text,spanText,linkTO}) => {
-    return (
-        <Text>{text}<Link to={linkTO}>{spanText}</Link></Text>
-    )
-}
-
-export default TextForm
+import React from "react";
+import { ALink } from "../../global/style";
+import { Text } from "./style";
+const TextForm = ({ text, spanText, linkTo }) => {
+  return (
+    <Text>
+      {" "}
+      {text}{" "}
+      <ALink to={linkTo} color="#FF0000">
+        {" "}
+        {spanText}{" "}
+      </ALink>{" "}
+    </Text>
+  );
+};

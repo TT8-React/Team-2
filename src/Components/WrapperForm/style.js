@@ -1,17 +1,19 @@
 import styled from "styled-components";
 
 export const FormWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #F8F8F8;
-    border: 1px solid #000000;
-    border-radius: 30px;
-    width:26%;
-    margin: auto;
-    padding: 2rem ;
-    margin-top: 6%;
-    &>form{
-        width: 100%;
-    }
-`
+  background: #f8f8f8;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  width: 28%;
+  margin: auto;
+  padding: 2rem;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 6%;
+  & > form {
+    width: 100%;
+  }
+`;
