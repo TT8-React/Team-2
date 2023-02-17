@@ -2,7 +2,6 @@ import React from "react";
 
 //  components
 import Button from "../../../Components/Button";
-import Layout from "../../../Components/Layout";
 import ReportGrid from "../../../Components/ReportGrid";
 import TableTwoCols from "../../../Components/TableTwoCols";
 
@@ -11,7 +10,7 @@ import { TwoColsTableData } from "../../../MockData/Data";
 
 const Gri = () => {
   return (
-    <Layout path="GRI Report">
+    <>
       <div
         style={{
           marginLeft: "1100px",
@@ -23,7 +22,7 @@ const Gri = () => {
       <ReportGrid>
         <TableTwoCols data={TwoColsTableData} />
       </ReportGrid>
-    </Layout>
+    </>
   );
 };
 

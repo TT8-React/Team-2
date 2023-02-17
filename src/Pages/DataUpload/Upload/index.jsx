@@ -1,5 +1,5 @@
 import React from 'react'
-import Upload from '../../Components/Upload'
+import Upload from '../../../Components/Upload'
 
 export default function DataUpload() {
   return (

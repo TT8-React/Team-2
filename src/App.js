@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Authorized, NotAuthorized } from "./Routes";
 
 function App() {
@@ -6,7 +6,9 @@ function App() {
 
   return (
     <div className="App">
-      {isAuthorized ? <Authorized /> : <NotAuthorized />}
+      <Suspense fallback={<div>Loading...</div>}>
+        {isAuthorized ? <Authorized /> : <NotAuthorized />}
+      </Suspense>
     </div>
   );
 }

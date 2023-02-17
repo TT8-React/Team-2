@@ -2,7 +2,7 @@ import { Button, Popover, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { ALink } from "../../global/style";
 import { PATHS } from "../../Routes";
-import { Nav, Flex, Avatar } from "./style";
+import { Nav, Flex, Avatar, PageName } from "./style";
 
 const Navbar = ({ path }) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -20,7 +20,7 @@ const Navbar = ({ path }) => {
   return (
     <Nav>
       <Flex>
-        <div style={{ fontWeight: "bold" }}>{path}</div>
+        <PageName>{path}</PageName>
         <Avatar onClick={handleClick}>
           <Button
             variant="contained"

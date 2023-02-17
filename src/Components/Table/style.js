@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const StyledTable = styled.table`
   border-collapse: collapse;
-  margin-top: 100px;
-  margin-left: 25px;
-
+  margin: 0 auto;
+  margin-top: 12%;
+  border-radius: 0.5rem;
+  
   th {
     background-color: #e5e5e5;
     border: 1px solid black;

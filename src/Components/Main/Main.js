@@ -1,7 +1,9 @@
 import React from "react";
+
 import { Content } from "./style";
-const Main = ({ children }) => {
+
+const Mainn = ({ children }) => {
   return <Content>{children}</Content>;
 };
 
-export default Main;
+export default Mainn;

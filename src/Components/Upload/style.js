@@ -38,9 +38,9 @@ export const UploadForm = styled.form`
   }
 `;
 export const Main = styled.main`
-  width: 85%;
+  width: 80%;
+  height: 89%;
   position: absolute;
   right: 0;
   top: 11%;
-  overflow-x: hidden;
 `;

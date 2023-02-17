@@ -8,7 +8,7 @@ import { Flex } from "./style";
 
 const Report = () => {
   return (
-    <Layout path="Report">
+    <>
       <TopSection>
         <Button name="Create report" />
       </TopSection>
@@ -17,7 +17,7 @@ const Report = () => {
         <ReportCard title="GRI report" path="/gri" />
         <MModal />
       </Flex>
-    </Layout>
+    </>
   );
 };
 

@@ -5,7 +5,7 @@ export const Btn=styled.button`
     border-radius: 5px;
     color:#fff;
     font-weight: 700;
-    font-size: 16px;
+    font-size: ${ props=> props.big ? '30px':'16px'};
     line-height: 19px;
     padding: 10px 16px;
 `
