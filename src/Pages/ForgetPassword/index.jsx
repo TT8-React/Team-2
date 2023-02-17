@@ -10,7 +10,7 @@ import FormTitle from "./../../Components/FormTitle/index";
 import FormItem from "./../../Components/FormItem/index";
 import FormBtn from "./../../Components/FormBtn/index";
 import { FlexCenter } from "../../global/style";
-import Error from "./../../Components/Error/index";
+import Error from "../../Components/ErrorBoundary/index";
 
 const ForgetPassword = () => {
   //validation

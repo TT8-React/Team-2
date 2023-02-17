@@ -14,7 +14,7 @@ import FormItem from "./../../Components/FormItem/index";
 import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
 import { FlexCenter } from "../../global/style";
-import Error from "../../Components/Error";
+import Error from "../../Components/ErrorBoundary";
 //  API
 import { API_URL } from "./../../config/api";
 

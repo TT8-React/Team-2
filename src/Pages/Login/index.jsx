@@ -10,7 +10,7 @@ import FormTitle from "./../../Components/FormTitle/index";
 import FormItem from "./../../Components/FormItem/index";
 import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
-import Error from "../../Components/Error";
+import Error from "../../Components/ErrorBoundary";
 import Text from "./Text";
 import { FlexCenter } from "./../../global/style";
 //  API
