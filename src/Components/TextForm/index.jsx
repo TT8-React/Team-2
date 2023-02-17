@@ -13,3 +13,5 @@ const TextForm = ({ text, spanText, linkTo }) => {
     </Text>
   );
 };
+
+export default TextForm;
