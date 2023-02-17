@@ -1,9 +1,12 @@
-import Login from "./Pages/Login";
+import { useState } from "react";
+import { Authorized, NotAuthorized } from "./Routes";
 
 function App() {
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
   return (
     <div className="App">
-      <Login />
+      {isAuthorized ? <Authorized /> : <NotAuthorized />}
     </div>
   );
 }
