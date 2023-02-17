@@ -5,7 +5,7 @@ export const Grid = styled.div`
   grid-template-columns: 1fr 2fr;
   justify-content: center;
   width: 100%;
-  margin-left: 10%;
+  padding-left: 10%;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 `;

@@ -41,9 +41,8 @@ const SideBar = () => {
             }}
           >
             <ALink to={PATHS.REPORT} color="#000">
-              {" "}
               Report
-            </ALink>{" "}
+            </ALink>
             <img src={openReport ? opened : closed} alt="arrow" />
           </SideItem>
           {openReport && (
@@ -55,7 +54,7 @@ const SideBar = () => {
             active={activeItem === "data_upload"}
             onClick={() => handleItemClick("data_upload")}
           >
-            <ALink to={PATHS.DATAUPLOAD}> Data upload</ALink>
+            <ALink to={PATHS.MANUAL}> Data upload</ALink>
           </SideItem>
           <SideItem
             active={activeItem === "analytics"}
@@ -69,13 +68,13 @@ const SideBar = () => {
           {openAnalytics && (
             <>
               <MenuItem>
-                <ALink to={PATHS.MYREPORT}>Environment</ALink>
+                <ALink to={PATHS.ENVIRONMENT}>Environment</ALink>
               </MenuItem>
               <MenuItem>
-                <ALink to={PATHS.MYREPORT}>Social</ALink>
+                <ALink to={PATHS.SOCIAL}>Social</ALink>
               </MenuItem>
               <MenuItem>
-                <ALink to={PATHS.MYREPORT}>Governance</ALink>
+                <ALink to={PATHS.GOVERNANCE}>Governance</ALink>
               </MenuItem>
             </>
           )}

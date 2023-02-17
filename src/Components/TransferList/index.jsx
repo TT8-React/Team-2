@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
-import { OuterContainer, TransferListContainer } from './style'
+
+import {RxDoubleArrowRight} from 'react-icons/rx'
+import {RxDoubleArrowLeft} from 'react-icons/rx'
+
+import { BackButton, OuterContainer, TransferListContainer } from './style'
 import Button from '../../Components/Button'
 import TransferListItem from '../TransferListItem'
 import { TransferListDate } from '../../MockData/Data'
+import { Btn } from '../Button/style'
 
 export default function TransferList() {
 
@@ -20,23 +25,19 @@ export default function TransferList() {
   }
 
   return (
-    <OuterContainer>
-      <div
-        style={{
-          position: 'absolute',
-          top:'125px',
-          right: '51px'
-        }}>
+    <>
+      <BackButton>
         <Button name={"Back"} />
-      </div>
+      </BackButton>
+    <OuterContainer>
       <TransferListContainer>
         {RItems.map((item)=>{
           return <TransferListItem key={item.id} handleTransfer={()=>handleTransfer(item.id, item.test,'left')}>{item.test}</TransferListItem>
         })}
       </TransferListContainer>
       <div>
-        <Button name={'>>'}/>
-        <Button name={'<<'}/>
+      <Btn big><RxDoubleArrowLeft/></Btn>
+      <Btn big><RxDoubleArrowRight /></Btn>
       </div>
       <TransferListContainer>
        {LItems.map((item)=>{
@@ -44,5 +45,6 @@ export default function TransferList() {
         })}
       </TransferListContainer>
     </OuterContainer>
+    </>
   )
 }

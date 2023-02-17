@@ -3,19 +3,15 @@ import React from "react";
 //components
 import Table from "../../../Components/Table";
 import Button from "../../../Components/Button/index";
+import { BackButton } from "../../../Components/TransferList/style";
 
 export default function TableReport() {
   return (
-    <div>
-      <div
-        style={{
-          marginLeft: "1100px",
-          marginTop: "25px",
-        }}
-      >
+    <>
+      <BackButton>
         <Button name={"Back"} />
-      </div>
+      </BackButton>
       <Table />
-    </div>
+    </>
   );
 }
