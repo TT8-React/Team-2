@@ -33,7 +33,7 @@ const MModal = () => {
           sx={style1}
           style={{
             backgroundColor: "#FFFFFF",
-            padding: "1rem 2rem ",
+            padding: "1rem 1.5rem ",
             borderRadius: "12px",
             width: "35%",
             display: "flex",
@@ -41,22 +41,26 @@ const MModal = () => {
             justifyContent: "center",
           }}
         >
-          <CustomTypography
-            id="modal-modal-title"
-            variant="h6"
-            component="h2"
-            sx={{
+          <div
+            style={{
               display: "flex",
               width: "100%",
               justifyContent: "space-between",
               alignItems: "center",
+              paddingBottom: "0.5rem",
             }}
           >
-            Customize report
+            <CustomTypography
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+            >
+              Customize report
+            </CustomTypography>
             <Close onClick={handleClose} style={{ cursor: "pointer" }}>
               X
             </Close>
-          </CustomTypography>
+          </div>
           <Line />
           <Flex>
             <Column>

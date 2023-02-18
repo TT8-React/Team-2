@@ -3,19 +3,21 @@ import styled from "styled-components";
 
 export const Close = styled.p`
   cursor: pointer;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.2s ease;
   border-radius: 50%;
   height: 30px;
   width: 30px;
   text-align: center;
+  padding: 0.1rem;
   &:hover {
-    transform: rotate(360);
+    transform: scale(1.1);
   }
 `;
 export const Line = styled.hr`
-  margin: -1rem -2rem 2rem;
+  margin: -1rem -1.5rem 1.5rem;
   border: 1px solid #000;
 `;
 export const CustomTypography = styled(Typography)`
