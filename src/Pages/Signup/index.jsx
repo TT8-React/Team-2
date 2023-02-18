@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 //libraries
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
-import { useNavigate } from "react-router-dom";
 
 //components
 import WrapperForm from "./../../Components/WrapperForm/index";
@@ -17,10 +16,11 @@ import { FlexCenter } from "../../global/style";
 import Error from "../../Components/ErrorBoundary";
 //  API
 import { API_URL } from "./../../config/api";
+import { useAuthContext } from "../../Context/AuthContext";
+
 
 const Signup = () => {
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const { loading, setLoading, setToken, login } = useAuthContext();
 
   //validation
   const validationSchema = Yup.object({
@@ -56,7 +56,9 @@ const Signup = () => {
 
     if (res) {
       console.log("you are logged in successfully");
-      navigate("/dashboard");
+      setToken(res.data.token);
+      localStorage.setItem("token", res.data.token);
+      login();
     }
   };
 
