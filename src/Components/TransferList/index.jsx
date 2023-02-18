@@ -24,6 +24,16 @@ export default function TransferList() {
     }
   }
 
+  const handleClick = (direction)=>{
+    if(direction === 'right'){
+      setLItems((prev)=> [...prev,...RItems])
+      setRItems([])
+    }else{
+      setRItems((prev)=> [...prev,...LItems])
+      setLItems([])
+    }
+  }
+
   return (
     <>
       <BackButton>
@@ -36,8 +46,8 @@ export default function TransferList() {
         })}
       </TransferListContainer>
       <div>
-      <Btn big><RxDoubleArrowLeft/></Btn>
-      <Btn big><RxDoubleArrowRight /></Btn>
+      <Btn big onClick={()=>handleClick('left')}><RxDoubleArrowLeft/></Btn>
+      <Btn big onClick={()=>handleClick('right')}><RxDoubleArrowRight /></Btn>
       </div>
       <TransferListContainer>
        {LItems.map((item)=>{

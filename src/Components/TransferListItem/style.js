@@ -6,7 +6,6 @@ align-items: center;
 justify-content: space-between;
 height: 74px;
 color: #000000;
-/* padding: 0px 0px 0px 38px; */
 border-bottom: 1px solid #A9A9A9;
 position: relative;
 
