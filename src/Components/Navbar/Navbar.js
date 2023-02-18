@@ -1,7 +1,11 @@
-import { Button, Popover, Typography } from "@mui/material";
 import React, { useState } from "react";
+// material ui
+import { Button, Popover, Typography } from "@mui/material";
+//  global
 import { ALink } from "../../global/style";
+//  paths
 import { PATHS } from "../../Routes";
+//  components
 import { Nav, Flex, Avatar, PageName } from "./style";
 
 const Navbar = ({ path }) => {
@@ -36,14 +40,17 @@ const Navbar = ({ path }) => {
         <Popover
           open={open}
           anchorEl={anchorEl}
-          onClose={handleClose}
+          onClose={() => setAnchorEl(null)}
           anchorOrigin={{
             vertical: "bottom",
-            horizontal: "left",
+            horizontal: "center",
           }}
           sx={{ margin: "0.5rem auto" }}
         >
-          <Typography sx={{ p: 2, background: "#FFFFFF", color: "#000" }}>
+          <Typography
+            onClick={handleClose}
+            sx={{ p: 2, background: "#FFFFFF", color: "#000" }}
+          >
             <ALink to={PATHS.PROFILEDETAILS}>Profile Details</ALink>
           </Typography>
         </Popover>
