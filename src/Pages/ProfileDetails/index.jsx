@@ -7,10 +7,11 @@ export default function ProfileDetails() {
   return (
     <>
       <TopSection>
-        <Button name={"View details"} />
-      </TopSection>
+        <Button name={"View details"} />{" "}
+      </TopSection>{" "}
       <InputsWraper>
         <InputGrid>
+          {" "}
           {ProfileDetailsData.map((item) => {
             return (
               <FormItem
@@ -20,10 +21,10 @@ export default function ProfileDetails() {
                 key={item.id}
               />
             );
-          })}
-        </InputGrid>
-      </InputsWraper>
-      <Button name={"Submit"} />
+          })}{" "}
+        </InputGrid>{" "}
+        <Button name={"Submit"} />{" "}
+      </InputsWraper>{" "}
     </>
   );
 }

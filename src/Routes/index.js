@@ -11,7 +11,7 @@ import Manual from "../Pages/DataUpload/Manual";
 import Environment from "../Pages/Analytic/Environment";
 import Governance from "../Pages/Analytic/Governance";
 import Social from "../Pages/Analytic/Social";
-
+import CompanyDetails from "../Pages/CompanyDetails/";
 // pages
 const Signup = lazy(() => import("../Pages/Signup"));
 const Login = lazy(() => import("../Pages/Login"));
@@ -27,6 +27,7 @@ export const PATHS = {
   LOGIN: "/login",
   FORGETPASSWORD: "/forgetPassword",
   DASHBOARD: "/dashboard",
+  COMPANYDETAILS: "/companydetails",
   PROFILEDETAILS: "/profile",
   MYREPORT: "/myReport",
   REPORT: "/report",
@@ -68,6 +69,12 @@ export function Authorized() {
       <Main>
         <Routes>
           <Route index path={PATHS.DASHBOARD} element={<Dashboard />} />
+          <Route
+            index
+            path={PATHS.COMPANYDETAILS}
+            element={<CompanyDetails />}
+          />
+
           <Route path={PATHS.PROFILEDETAILS} element={<ProfileDetails />} />
           <Route path={PATHS.MYREPORT} element={<MyReport />} />
           <Route path={PATHS.REPORT} element={<Report />} />

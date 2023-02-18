@@ -25,13 +25,13 @@ const SideBar = () => {
             active={activeItem === "dashboard"}
             onClick={() => handleItemClick("dashboard")}
           >
-            <ALink to="/dashboard">Dashboard</ALink>
+            <ALink to={PATHS.DASHBOARD}>Dashboard</ALink>
           </SideItem>
           <SideItem
             active={activeItem === "company_details"}
             onClick={() => handleItemClick("company_details")}
           >
-            <ALink to={PATHS.CUSTOMIZE}> Company details</ALink>
+            <ALink to={PATHS.COMPANYDETAILS}> Company details</ALink>
           </SideItem>
           <SideItem
             active={activeItem === "report"}

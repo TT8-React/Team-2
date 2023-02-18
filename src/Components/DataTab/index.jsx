@@ -7,9 +7,15 @@ export default function DataTab() {
   return (
     <Tab>
       <ul>
-      <NavLink activeClassName="active" to={PATHS.MANUAL}><TabItem> Manual data tab </TabItem></NavLink> 
-      <NavLink activeClassName7="active" to={PATHS.UPLOAD}><TabItem>Bulk upload tab </TabItem></NavLink>
-      </ul>
+        <NavLink activeClassName="active" to={PATHS.MANUAL}>
+          {" "}
+          <TabItem> Manual data tab </TabItem>{" "}
+        </NavLink>{" "}
+        <NavLink activeClassName="active" to={PATHS.UPLOAD}>
+          {" "}
+          <TabItem> Bulk upload tab </TabItem>{" "}
+        </NavLink>{" "}
+      </ul>{" "}
     </Tab>
   );
 }
