@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../Context/AuthContext";
 
 import WrapperForm from "./../../Components/WrapperForm/index";
 import FormTitle from "./../../Components/FormTitle/index";
@@ -16,8 +16,8 @@ import { FlexCenter } from "./../../global/style";
 import { API_URL } from "./../../config/api";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const { loading, setLoading, setToken, login } = useAuthContext();
+
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Invalid email")
@@ -36,7 +36,9 @@ const Login = () => {
 
     if (res) {
       console.log("you are logged in successfully");
-      navigate("/dashboard");
+      setToken(res.data.token);
+      localStorage.setItem("token", res.data.token);
+      login();
     }
   };
 
