@@ -1,17 +1,23 @@
-import Verified from "./../Pages/Verified/index";
-import Verification from "./../Pages/Verification/index";
-import ProtectedRoute from "../Components/ProtectedRoute";
 
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
 
+
 // pages
+
+//Auth page
 const LoginAuth = lazy(() =>
   import("./../Components/AuthonticationSection/LogInAuth")
 );
 const SignUpAuth = lazy(() =>
   import("./../Components/AuthonticationSection/SignUpAuth")
 );
+const Verified=lazy(()=>import("./../Pages/Verified/index"));
+const Verification = lazy(()=>import("./../Pages/Verification/index"));
+const ProtectedRoute = lazy(()=>import('../Components/ProtectedRoute'))
+
+
+//another pages
 const Dashboard = lazy(() => import("../Pages/Dashboard"));
 const ForgetPassword = lazy(() => import("../Pages/ForgetPassword"));
 const MyReport = lazy(() => import("../Pages/Reports/MyReport"));
@@ -26,6 +32,8 @@ const Sebi = lazy(() => import("../Pages/Reports/Sebi"));
 const Gri = lazy(() => import("../Pages/Reports/Gri"));
 const DataUpload = lazy(() => import("../Pages/DataUpload/Upload"));
 const Customize = lazy(() => import("../Pages/Reports/Customize"));
+
+
 
 
 

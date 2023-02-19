@@ -3,7 +3,7 @@ import Upload from '../../../Components/Upload'
 
 export default function DataUpload() {
   return (
-    <div>
+    <div style={{width:'100%'}}>
         <Upload />
     </div>
   )

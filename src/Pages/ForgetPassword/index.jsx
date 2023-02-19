@@ -14,6 +14,8 @@ import Error from "../../Components/Error";
 import { useNavigate } from 'react-router-dom';
 import { PATHS } from './../../Routes/index';
 
+
+
 const ForgetPassword = () => {
   const navigate = useNavigate()
   //validation
