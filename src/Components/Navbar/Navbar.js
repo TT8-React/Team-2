@@ -43,7 +43,7 @@ const Navbar = ({ path }) => {
           onClose={() => setAnchorEl(null)}
           anchorOrigin={{
             vertical: "bottom",
-            horizontal: "center",
+            horizontal: "right",
           }}
           sx={{ margin: "0.5rem auto" }}
         >

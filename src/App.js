@@ -2,7 +2,7 @@ import { Suspense, useState } from "react";
 import { Authorized, NotAuthorized } from "./Routes";
 
 function App() {
-  const [isAuthorized, setIsAuthorized] = useState(true);
+  const [isAuthorized, setIsAuthorized] = useState(false);
 
   return (
     <div className="App">

@@ -1,7 +1,7 @@
 import useAuth from "../hooks/useAuth";
 import { createContext, useContext } from "react";
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext(false);
 
 const AuthProvider = ({ children }) => {
   const auth = useAuth();

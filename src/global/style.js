@@ -23,3 +23,21 @@ export const TopSection = styled.div`
     margin-right: 60px;
   }
 `;
+export const Spinner = styled.div`
+  border: 3px solid #fff;
+  border-top: 3px #000 solid;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  animation: spin 0.5s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;

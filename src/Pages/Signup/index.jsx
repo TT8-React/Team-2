@@ -5,6 +5,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
+//  hook
+import useAuth from "../../hooks/useAuth";
 
 //components
 import WrapperForm from "./../../Components/WrapperForm/index";
@@ -12,15 +14,13 @@ import FormTitle from "./../../Components/FormTitle/index";
 import FormItem from "./../../Components/FormItem/index";
 import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
-import { FlexCenter } from "../../global/style";
+import { FlexCenter, Spinner } from "../../global/style";
 import Error from "../../Components/ErrorBoundary";
 //  API
 import { API_URL } from "./../../config/api";
-import { useAuthContext } from "../../Context/AuthContext";
-
 
 const Signup = () => {
-  const { loading, setLoading, setToken, login } = useAuthContext();
+  const { loading, setLoading, setToken, login } = useAuth();
 
   //validation
   const validationSchema = Yup.object({
@@ -107,7 +107,7 @@ const Signup = () => {
             <Error msg={formik.errors.password} />
           )}{" "}
           <FlexCenter>
-            <FormBtn name={loading ? "Loading" : "Sign up"} />{" "}
+            <FormBtn name={loading ? <Spinner /> : "Sign up"} />{" "}
           </FlexCenter>{" "}
           <TextForm
             text="Already have an account ?"
