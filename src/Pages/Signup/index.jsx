@@ -12,14 +12,14 @@ import FormItem from "./../../Components/FormItem/index";
 import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
 import { FlexCenter } from "../../global/style";
-import Error from "../../Components/ErrorBoundary";
+import Error from "../../Components/Error";
 
 //  API
 import { API_URL } from "./../../config/api";
-import useAuth from "../../hooks/useAuth";
+import { useAuthContext } from './../../Context/AuthContext';
 
 const Signup = () => {
-  const { loading, setLoading, setToken, login } = useAuth();
+  const { loading, setLoading, setToken, login } = useAuthContext();
 
   //validation Schema
   const validationSchema = Yup.object({
@@ -46,24 +46,20 @@ const Signup = () => {
     password: "",
   };
 
-  const onSubmit = async ({ name, email, password }) => {
-    try {
-      setLoading(true);
-      const res = await axios.post(`${API_URL}/users/signup`, {
-        email,
-        password,
-        name,
-      });
-      console.log("you are logged in successfully");
-      setToken(res.data.token);
-      localStorage.setItem("token", res.data.token);
-      login();
-    } catch (err) {
-      console.log(err.message);
-    } finally {
-      setLoading(false);
+  const onSubmit=async({ name,email,password})=>{
+    setLoading(true);
+    const res =await axios.post(`${API_URL}/users/signup`,{ email,
+    password,name}).catch((err)=>{
+      console.log(err.message)
+    }).finally(()=>setLoading(false))
+
+      if(res){
+        console.log("you are logged in successfully");
+        setToken(res.data.token);
+        localStorage.setItem("token", res.data.token);
+        login();
+      }
     }
-  };
 
   const formik = useFormik({
     initialValues,
@@ -110,7 +106,7 @@ const Signup = () => {
             <Error msg={formik.errors.password} />
           )}
           <FlexCenter>
-            <FormBtn name={loading ? "Loading" : "Sign up"} />
+            <FormBtn name={loading ? "Loading" : "Sign up"} type="submit"/>
           </FlexCenter>
           <TextForm
             text="Already have an account ?"

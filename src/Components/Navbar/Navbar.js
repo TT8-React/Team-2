@@ -8,7 +8,7 @@ import {TbLogout} from "react-icons/tb"
 import { PATHS } from "../../Routes";
 //  components
 import { Nav, Flex, Avatar, PageName, Logout } from "./style";
-import useAuth from "../../hooks/useAuth";
+import { useAuthContext } from './../../Context/AuthContext';
 
 const Navbar = ({ path }) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -22,7 +22,7 @@ const Navbar = ({ path }) => {
   };
 
   const open = Boolean(anchorEl);
-  const { logout } = useAuth();
+  const { logout } = useAuthContext();
 
   return (
     <Nav>
@@ -57,7 +57,7 @@ const Navbar = ({ path }) => {
             onClick={handleClose}
             sx={{ p: 2, background: "#FFFFFF", color: "#000" }}
           >
-            <ALink to={PATHS.PROFILEDETAILS}>Profile Details</ALink>
+            <ALink to={PATHS.PROFILE_DETAILS}>Profile Details</ALink>
           </Typography>
         </Popover>
       </Flex>

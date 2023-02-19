@@ -1,36 +1,29 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { PATHS } from "../Routes";
 
 const useAuth = () => {
     const [loading, setLoading] = useState(false);
-    const [isAuthorized , setIsAuthorized]=useState(false);
+    const [authorized , setAuthorized]=useState(false);
     const [token, setToken] = useState("");
-    const navagate = useNavigate()
 
     const logout = () => {
         localStorage.clear();
-        setIsAuthorized(false);
-        console.log('logouttttttt',!isAuthorized)
-        navagate(PATHS.LOGIN)
+        setAuthorized(false);
     };
 
     const login =()=>{
-        setIsAuthorized(true);
-        console.log('Authorizeddd',isAuthorized)
-        navagate(PATHS.DASHBOARD)
+        setAuthorized(true);
     }
 
     useEffect(()=>{
         const token = localStorage.getItem("token");
         if(token){
-            setIsAuthorized(true);
+            setAuthorized(true);
         }
     },[])
 
     return {
-        isAuthorized,
-        setIsAuthorized,
+        authorized,
+        setAuthorized,
         loading,
         setLoading,
         token,

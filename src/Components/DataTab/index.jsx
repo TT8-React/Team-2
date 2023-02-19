@@ -7,11 +7,11 @@ export default function DataTab() {
   return (
     <Tab>
       <ul>
-        <NavLink activeClassName="active" to={PATHS.MANUAL}>
+        <NavLink activeClassName="active" to={`${PATHS.DASHBOARD}/${PATHS.MANUAL}`}>
           {" "}
           <TabItem> Manual data tab </TabItem>{" "}
         </NavLink>{" "}
-        <NavLink activeClassName="active" to={PATHS.UPLOAD}>
+        <NavLink activeClassName="active" to={`${PATHS.DASHBOARD}/${PATHS.UPLOAD}`}>
           {" "}
           <TabItem> Bulk upload tab </TabItem>{" "}
         </NavLink>{" "}

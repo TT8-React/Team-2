@@ -4,9 +4,8 @@ import { createContext, useContext } from "react";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
-  const {isAuthorized} = useAuth();
-  console.log("AuthProvider",isAuthorized)
-  return <AuthContext.Provider value={isAuthorized}>{children}</AuthContext.Provider>;
+  const auth = useAuth();
+  return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
 };
 
 export default AuthProvider;
