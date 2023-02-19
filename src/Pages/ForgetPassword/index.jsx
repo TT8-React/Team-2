@@ -24,7 +24,8 @@ const ForgetPassword = () => {
     email: "",
   };
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefualt();
     console.log("submit");
   };
 

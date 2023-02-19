@@ -1,11 +1,8 @@
 import React from "react";
-//  libraries
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-//  hooks
-import useAuth from "../../hooks/useAuth";
-//  components
+
 import WrapperForm from "./../../Components/WrapperForm/index";
 import FormTitle from "./../../Components/FormTitle/index";
 import FormItem from "./../../Components/FormItem/index";
@@ -13,11 +10,11 @@ import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
 import Error from "../../Components/Error";
 import Text from "./Text";
-//  global
+
 import { FlexCenter } from "./../../global/style";
-import { Spinner } from "../../global/style";
-//  API
 import { API_URL } from "./../../config/api";
+import { PATHS } from "../../Routes";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const { loading, setLoading, setToken, login } = useAuth();
@@ -31,18 +28,22 @@ const Login = () => {
 
   const onSubmit = async ({ email, password }) => {
     setLoading(true);
-    const res = await axios
-      .post(`${API_URL}/users/login`, { email, password })
-      .catch((err) => {
-        console.log(err.message);
-      })
-      .finally(() => setLoading(false));
+    try {
+      const res = await axios.post(`${API_URL}/users/login`, {
+        email,
+        password,
+      });
 
-    if (res) {
-      console.log("you are logged in successfully");
-      setToken(res.data.token);
-      localStorage.setItem("token", res.data.token);
-      login();
+      if (res) {
+        console.log("you are logged in successfully");
+        setToken(res.data.token);
+        localStorage.setItem("token", res.data.token);
+        login();
+      }
+    } catch (err) {
+      console.log(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -83,13 +84,13 @@ const Login = () => {
         )}{" "}
         <Text text="Forget password ?" />
         <FlexCenter>
-          <FormBtn name={loading ? <Spinner /> : "LOGIN"} type="submit" />
+          <FormBtn name={loading ? "Loading...." : "LOGIN"} type="submit" />
         </FlexCenter>{" "}
         <TextForm
           text="Don’t have an account ?"
           spanText="Sign up"
-          linkTo="/signup"
-        />
+          linkTo={PATHS.SIGNUP}
+        />{" "}
       </form>{" "}
     </WrapperForm>
   );

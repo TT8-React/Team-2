@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import { Button, Popover, Typography } from "@mui/material";
 //  global
 import { ALink } from "../../global/style";
+import { TbLogout } from "react-icons/tb";
 //  paths
 import { PATHS } from "../../Routes";
 //  components
-import { Nav, Flex, Avatar, PageName } from "./style";
+import { Nav, Flex, Avatar, PageName, Logout } from "./style";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = ({ path }) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -20,30 +22,34 @@ const Navbar = ({ path }) => {
   };
 
   const open = Boolean(anchorEl);
+  const { logout } = useAuth();
 
   return (
     <Nav>
       <Flex>
         <PageName>{path}</PageName>
-        <Avatar onClick={handleClick}>
-          <Button
-            variant="contained"
-            style={{
-              backgroundColor: "transparent",
-              display: "block",
-              height: "95%",
-              minWidth: "46px",
-              borderRadius: "50%",
-            }}
-          />
-        </Avatar>
+        <Logout>
+          <Avatar onClick={handleClick}>
+            <Button
+              variant="contained"
+              style={{
+                backgroundColor: "transparent",
+                display: "block",
+                height: "95%",
+                minWidth: "46px",
+                borderRadius: "50%",
+              }}
+            />
+          </Avatar>
+          <TbLogout style={{ cursor: "pointer" }} onClick={logout} />
+        </Logout>
         <Popover
           open={open}
           anchorEl={anchorEl}
           onClose={() => setAnchorEl(null)}
           anchorOrigin={{
             vertical: "bottom",
-            horizontal: "right",
+            horizontal: "center",
           }}
           sx={{ margin: "0.5rem auto" }}
         >

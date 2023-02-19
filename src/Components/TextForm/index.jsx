@@ -6,7 +6,7 @@ const TextForm = ({ text, spanText, linkTo }) => {
     <Text>
       {" "}
       {text}{" "}
-      <ALink to={`${linkTo}`} color="#FF0000">
+      <ALink to={linkTo} color="#FF0000">
         {" "}
         {spanText}{" "}
       </ALink>{" "}

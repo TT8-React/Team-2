@@ -5,24 +5,23 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
-//  hook
-import useAuth from "../../hooks/useAuth";
-
 //components
 import WrapperForm from "./../../Components/WrapperForm/index";
 import FormTitle from "./../../Components/FormTitle/index";
 import FormItem from "./../../Components/FormItem/index";
 import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
-import { FlexCenter, Spinner } from "../../global/style";
+import { FlexCenter } from "../../global/style";
 import Error from "../../Components/ErrorBoundary";
+
 //  API
 import { API_URL } from "./../../config/api";
+import useAuth from "../../hooks/useAuth";
 
 const Signup = () => {
   const { loading, setLoading, setToken, login } = useAuth();
 
-  //validation
+  //validation Schema
   const validationSchema = Yup.object({
     name: Yup.string().required("Please Enter your name"),
 
@@ -40,25 +39,29 @@ const Signup = () => {
       )
       .required("Please enter your password"),
   });
+
   const initialValues = {
     name: "",
     email: "",
     password: "",
   };
-  const onSubmit = async ({ name, email, password }) => {
-    setLoading(true);
-    const res = await axios
-      .post(`${API_URL}/users/signup`, { email, password, name })
-      .catch((err) => {
-        console.log(err.message);
-      })
-      .finally(() => setLoading(false));
 
-    if (res) {
+  const onSubmit = async ({ name, email, password }) => {
+    try {
+      setLoading(true);
+      const res = await axios.post(`${API_URL}/users/signup`, {
+        email,
+        password,
+        name,
+      });
       console.log("you are logged in successfully");
       setToken(res.data.token);
       localStorage.setItem("token", res.data.token);
       login();
+    } catch (err) {
+      console.log(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -71,7 +74,7 @@ const Signup = () => {
   return (
     <>
       <WrapperForm>
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit} autoComplete="off">
           <FormTitle title="SIGN UP" />
           <FormItem
             label="Name"
@@ -107,7 +110,7 @@ const Signup = () => {
             <Error msg={formik.errors.password} />
           )}{" "}
           <FlexCenter>
-            <FormBtn name={loading ? <Spinner /> : "Sign up"} />{" "}
+            <FormBtn name={loading ? "Loading" : "Sign up"} />{" "}
           </FlexCenter>{" "}
           <TextForm
             text="Already have an account ?"
