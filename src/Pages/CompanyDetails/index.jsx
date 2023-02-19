@@ -5,7 +5,7 @@ import { Container } from "./style";
 
 export default function CompanyDetails() {
   return (
-    <div>
+    <>
       <div
         style={{
           marginTop: "45px",
@@ -16,17 +16,16 @@ export default function CompanyDetails() {
         }}
       >
         <Button name={"Edit company details"} />{" "}
-      </div>{" "}
+      </div>
       <Container>
-        {" "}
         {CompanyDetailsData.map((item) => {
           return (
             <div key={item.id}>
               <p> {item.name} </p> <h4> {item.text} </h4>{" "}
             </div>
           );
-        })}{" "}
-      </Container>{" "}
-    </div>
+        })}
+      </Container>
+    </>
   );
 }

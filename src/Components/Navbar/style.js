@@ -19,6 +19,13 @@ export const Flex = styled.div`
   align-items: center;
   margin: auto;
 `;
+export const Logout = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 9%;
+    font-size: 2rem;
+`;
 export const Avatar = styled.div`
   background: url(${avatar});
   background-position: center center;

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 // material ui
 import { Button, Popover, Typography } from "@mui/material";
-//  global
+//  global  
 import { ALink } from "../../global/style";
+import {TbLogout} from "react-icons/tb"
 //  paths
 import { PATHS } from "../../Routes";
 //  components
-import { Nav, Flex, Avatar, PageName } from "./style";
+import { Nav, Flex, Avatar, PageName, Logout } from "./style";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = ({ path }) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -20,11 +22,13 @@ const Navbar = ({ path }) => {
   };
 
   const open = Boolean(anchorEl);
+  const { logout } = useAuth();
 
   return (
     <Nav>
       <Flex>
         <PageName>{path}</PageName>
+        <Logout>
         <Avatar onClick={handleClick}>
           <Button
             variant="contained"
@@ -37,6 +41,8 @@ const Navbar = ({ path }) => {
             }}
           />
         </Avatar>
+        <TbLogout style={{cursor:'pointer'}} onClick={logout} />
+        </Logout>
         <Popover
           open={open}
           anchorEl={anchorEl}

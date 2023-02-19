@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 95%;
+  width: 92%;
   background: #f2f2f2;
   border: 1px solid #989898;
   border-radius: 10px;
-  margin-top: 24px;
-  margin-left: 1rem;
-  padding: 30px;
+  margin: 0 auto;
+  margin-top: 3%;
+  padding:15px 30px;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.1rem;
   justify-content: space-between;
 `;
