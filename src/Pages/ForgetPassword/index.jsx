@@ -24,7 +24,8 @@ const ForgetPassword = () => {
     email: "",
   };
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefualt()
     console.log("submit");
   };
 
@@ -45,14 +46,14 @@ const ForgetPassword = () => {
           onChange={formik.handleChange}
           value={formik.values.email}
           onBlur={formik.handleBlur}
-        />{" "}
+        />
         {formik.touched.email && formik.errors.email && (
           <Error msg={formik.errors.email} />
-        )}{" "}
+        )}
         <FlexCenter>
           <FormBtn name="SUBMIT" type="submit" />
-        </FlexCenter>{" "}
-      </form>{" "}
+        </FlexCenter>
+      </form>
     </WrapperForm>
   );
 };

@@ -2,7 +2,6 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { useAuthContext } from "../../Context/AuthContext";
 
 import WrapperForm from "./../../Components/WrapperForm/index";
 import FormTitle from "./../../Components/FormTitle/index";
@@ -14,9 +13,11 @@ import Text from "./Text";
 
 import { FlexCenter } from "./../../global/style";
 import { API_URL } from "./../../config/api";
+import { PATHS } from "../../Routes";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
-  const { loading, setLoading, setToken, login } = useAuthContext();
+  const { loading, setLoading, setToken, login } = useAuth();
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -27,18 +28,22 @@ const Login = () => {
 
   const onSubmit = async ({ email, password }) => {
     setLoading(true);
-    const res = await axios
-      .post(`${API_URL}/users/login`, { email, password })
-      .catch((err) => {
-        console.log(err.message);
-      })
-      .finally(() => setLoading(false));
+    try {
+      const res = await axios.post(`${API_URL}/users/login`, {
+        email,
+        password,
+      });
 
-    if (res) {
-      console.log("you are logged in successfully");
-      setToken(res.data.token);
-      localStorage.setItem("token", res.data.token);
-      login();
+      if (res) {
+        console.log("you are logged in successfully");
+        setToken(res.data.token);
+        localStorage.setItem("token", res.data.token);
+        login();
+      }
+    } catch (err) {
+      console.log(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -62,10 +67,10 @@ const Login = () => {
           onChange={formik.handleChange}
           value={formik.values.email}
           onBlur={formik.handleBlur}
-        />{" "}
+        />
         {formik.touched.email && formik.errors.email && (
           <Error msg={formik.errors.email} />
-        )}{" "}
+        )}
         <FormItem
           label="Password"
           name="password"
@@ -73,20 +78,20 @@ const Login = () => {
           onChange={formik.handleChange}
           value={formik.values.password}
           onBlur={formik.handleBlur}
-        />{" "}
+        />
         {formik.touched.password && formik.errors.password && (
           <Error msg={formik.errors.password} />
-        )}{" "}
+        )}
         <Text text="Forget password ?" />
         <FlexCenter>
           <FormBtn name={loading ? "Loading...." : "LOGIN"} type="submit" />
-        </FlexCenter>{" "}
+        </FlexCenter>
         <TextForm
           text="Don’t have an account ?"
           spanText="Sign up"
-          linkTO="/signup"
+          linkTo={PATHS.SIGNUP}
         />
-      </form>{" "}
+      </form>
     </WrapperForm>
   );
 };

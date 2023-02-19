@@ -27,7 +27,7 @@ export const PATHS = {
   LOGIN: "/login",
   FORGETPASSWORD: "/forgetPassword",
   DASHBOARD: "/dashboard",
-  COMPANYDETAILS: "/companydetails",
+  COMPANYDETAILS: "/companyDetails",
   PROFILEDETAILS: "/profile",
   MYREPORT: "/myReport",
   REPORT: "/report",
@@ -56,11 +56,11 @@ export function Authorized() {
   const { pathname } = useLocation();
 
   const getPageName = (pathname) => {
-    const str = pathname.substr(1);
+    let str = pathname.substr(1);
+    str= str==='manual'?"dataUpload":str
     return str
       .split(/(?=[A-Z])/)
-      .join(" ")
-      .toUpperCase();
+      .join(" ");
   };
   return (
     <>
@@ -69,12 +69,7 @@ export function Authorized() {
       <Main>
         <Routes>
           <Route index path={PATHS.DASHBOARD} element={<Dashboard />} />
-          <Route
-            index
-            path={PATHS.COMPANYDETAILS}
-            element={<CompanyDetails />}
-          />
-
+          <Route path={PATHS.COMPANYDETAILS} element={<CompanyDetails />}/>
           <Route path={PATHS.PROFILEDETAILS} element={<ProfileDetails />} />
           <Route path={PATHS.MYREPORT} element={<MyReport />} />
           <Route path={PATHS.REPORT} element={<Report />} />
