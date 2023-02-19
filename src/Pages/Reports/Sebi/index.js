@@ -7,7 +7,7 @@ import TowColForm from "../../../Components/TowColForm";
 
 //  Data
 import { TwoColFormData } from "../../../MockData/Data";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Sebi = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Sebi = () => {
           marginTop: "25px",
         }}
       >
-        <Button name={"Back"} onClick={()=>navigate(-1)}/>
+        <Button name={"Back"} onClick={() => navigate(-1)} />
       </div>
       <ReportGrid>
         <TowColForm data={TwoColFormData} />

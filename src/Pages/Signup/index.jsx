@@ -16,7 +16,7 @@ import Error from "../../Components/Error";
 
 //  API
 import { API_URL } from "./../../config/api";
-import { useAuthContext } from './../../Context/AuthContext';
+import { useAuthContext } from "./../../Context/AuthContext";
 
 const Signup = () => {
   const { loading, setLoading, setToken, login } = useAuthContext();
@@ -46,20 +46,22 @@ const Signup = () => {
     password: "",
   };
 
-  const onSubmit=async({ name,email,password})=>{
+  const onSubmit = async ({ name, email, password }) => {
     setLoading(true);
-    const res =await axios.post(`${API_URL}/users/signup`,{ email,
-    password,name}).catch((err)=>{
-      console.log(err.message)
-    }).finally(()=>setLoading(false))
+    const res = await axios
+      .post(`${API_URL}/users/signup`, { email, password, name })
+      .catch((err) => {
+        console.log(err.message);
+      })
+      .finally(() => setLoading(false));
 
-      if(res){
-        console.log("you are logged in successfully");
-        setToken(res.data.token);
-        localStorage.setItem("token", res.data.token);
-        login();
-      }
+    if (res) {
+      console.log("you are logged in successfully");
+      setToken(res.data.token);
+      localStorage.setItem("token", res.data.token);
+      login();
     }
+  };
 
   const formik = useFormik({
     initialValues,
@@ -106,7 +108,7 @@ const Signup = () => {
             <Error msg={formik.errors.password} />
           )}
           <FlexCenter>
-            <FormBtn name={loading ? "Loading" : "Sign up"} type="submit"/>
+            <FormBtn name={loading ? "Loading" : "Sign up"} type="submit" />
           </FlexCenter>
           <TextForm
             text="Already have an account ?"

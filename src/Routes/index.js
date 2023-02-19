@@ -4,15 +4,7 @@ import ProtectedRoute from "../Components/ProtectedRoute";
 
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
-import Customize from "../Pages/Reports/Customize";
-import DataUpload from "../Pages/DataUpload/Upload";
-import Gri from "../Pages/Reports/Gri";
-import Sebi from "../Pages/Reports/Sebi";
-import Manual from "../Pages/DataUpload/Manual";
-import Environment from "../Pages/Analytic/Environment";
-import Governance from "../Pages/Analytic/Governance";
-import Social from "../Pages/Analytic/Social";
-import CompanyDetails from "../Pages/CompanyDetails/";
+
 // pages
 const LoginAuth = lazy(() =>
   import("./../Components/AuthonticationSection/LogInAuth")
@@ -25,6 +17,17 @@ const ForgetPassword = lazy(() => import("../Pages/ForgetPassword"));
 const MyReport = lazy(() => import("../Pages/Reports/MyReport"));
 const ProfileDetails = lazy(() => import("../Pages/ProfileDetails"));
 const Report = lazy(() => import("../Pages/Reports/Report/Report"));
+const CompanyDetails = lazy(() => import("../Pages/CompanyDetails"));
+const Social = lazy(() => import("../Pages/Analytic/Social"));
+const Governance = lazy(() => import("../Pages/Analytic/Governance"));
+const Environment = lazy(() => import("../Pages/Analytic/Environment"));
+const Manual = lazy(() => import("../Pages/DataUpload/Manual"));
+const Sebi = lazy(() => import("../Pages/Reports/Sebi"));
+const Gri = lazy(() => import("../Pages/Reports/Gri"));
+const DataUpload = lazy(() => import("../Pages/DataUpload/Upload"));
+const Customize = lazy(() => import("../Pages/Reports/Customize"));
+
+
 
 //  paths
 export const PATHS = {
@@ -47,6 +50,8 @@ export const PATHS = {
   VERIFICATION: "/verification",
   VERIFY: "/verify",
 };
+
+
 export const router = [
   { index: "true", element: <Navigate to={PATHS.LOGIN} /> },
   { path: PATHS.LOGIN, element: <LoginAuth /> },
