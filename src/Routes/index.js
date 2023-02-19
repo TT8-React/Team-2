@@ -84,6 +84,7 @@ export const router = [
       { path: PATHS.GRI, element: <Gri /> },
       { path: PATHS.CUSTOMIZE, element: <Customize /> },
       { path: PATHS.REPORT, element: <Report /> },
-    ],
+    ]
   },
+  {path:'*',element:<h1>Page not found</h1>}
 ];
