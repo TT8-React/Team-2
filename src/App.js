@@ -1,19 +1,17 @@
 import { Suspense } from "react";
 import AuthProvider from "./Context/AuthContext";
-import useAuth from "./hooks/useAuth";
-import { Authorized, NotAuthorized } from "./Routes";
+import { router as routes } from "./Routes/index";
+import { useRoutes } from "react-router-dom";
 
 function App() {
-
-  const {isAuthorized }= useAuth();
-
+  const router = useRoutes(routes);
   return (
     <div className="App">
-      <Suspense fallback={<div>Loading...</div>}>
       <AuthProvider>
-        {isAuthorized ? <Authorized /> : <NotAuthorized />}
-    </AuthProvider>
-      </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          {router}
+        </Suspense>
+      </AuthProvider>
     </div>
   );
 }
