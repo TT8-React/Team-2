@@ -12,14 +12,15 @@ import FormItem from "./../../Components/FormItem/index";
 import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
 import { FlexCenter } from "../../global/style";
-import Error from "../../Components/ErrorBoundary";
+import Error from "../../Components/Error";
 
 //  API
 import { API_URL } from "./../../config/api";
-import { useAuthContext } from "../../Context/AuthContext";
+import { useAuthContext } from "./../../Context/AuthContext";
 
 const Signup = () => {
   const { loading, setLoading, setToken, login } = useAuthContext();
+
   //validation Schema
   const validationSchema = Yup.object({
     name: Yup.string().required("Please Enter your name"),
@@ -61,6 +62,7 @@ const Signup = () => {
       login();
     }
   };
+
   const formik = useFormik({
     initialValues,
     onSubmit,
