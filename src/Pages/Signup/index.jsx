@@ -1,11 +1,9 @@
 import React from "react";
 
-
 //libraries
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-
 
 //components
 import WrapperForm from "./../../Components/WrapperForm/index";
@@ -13,14 +11,12 @@ import FormTitle from "./../../Components/FormTitle/index";
 import FormItem from "./../../Components/FormItem/index";
 import TextForm from "./../../Components/TextForm/index";
 import FormBtn from "./../../Components/FormBtn/index";
-import { FlexCenter } from "../../global/style";
+import { FlexCenter, Spinner } from "../../global/style";
 import Error from "../../Components/Error";
-
 
 //  API
 import { API_URL } from "./../../config/api";
 import { useAuthContext } from "./../../Context/AuthContext";
-
 
 const Signup = () => {
   const { loading, setLoading, setToken, login } = useAuthContext();
@@ -112,9 +108,8 @@ const Signup = () => {
             <Error msg={formik.errors.password} />
           )}{" "}
           <FlexCenter>
-            <FormBtn name={loading ? "Loading..." : "Sign up"} type="submit" />
+            <FormBtn name={loading ? <Spinner /> : "Sign up"} type="submit" />
           </FlexCenter>
-
           <TextForm
             text="Already have an account ?"
             spanText="Login"

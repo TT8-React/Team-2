@@ -11,9 +11,7 @@ import FormBtn from "./../../Components/FormBtn/index";
 import Error from "../../Components/Error";
 import Text from "./Text";
 
-
-import { FlexCenter } from "./../../global/style";
-
+import { FlexCenter, Spinner } from "./../../global/style";
 
 import { API_URL } from "./../../config/api";
 import { PATHS } from "../../Routes";
@@ -83,7 +81,7 @@ const Login = () => {
         )}{" "}
         <Text text="Forget password ?" />
         <FlexCenter>
-          <FormBtn name={loading ? "Loading...." : "LOGIN"} type="submit" />
+          <FormBtn name={loading ? <Spinner /> : "LOGIN"} type="submit" />
         </FlexCenter>{" "}
         <TextForm
           text="Don’t have an account ?"

@@ -1,6 +1,15 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { NavLink as BaseNavLink } from "react-router-dom";
 
+export const NavLink = styled(BaseNavLink)`
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+  &.active {
+    font-weight: bold;
+  }
+`;
 export const FlexCenter = styled.div`
   display: flex;
   align-items: center;
