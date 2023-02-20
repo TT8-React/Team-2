@@ -1,9 +1,9 @@
 # Dashboard 
 ### Team2 project
 ## 📌Links
-- [Live Linke](https://admin-dashboard-react-app23.netlify.app/)
+- [Live Link](https://admin-dashboard-react-app23.netlify.app/)
 
-- [Figma Linke](https://www.figma.com/file/nEDFhVnanFFEYDAbM8Q0ZD/Admin-(Community)?node-id=0%3A1&t=28BFctEaIhynwF36-0)
+- [Figma Link](https://www.figma.com/file/nEDFhVnanFFEYDAbM8Q0ZD/Admin-(Community)?node-id=0%3A1&t=28BFctEaIhynwF36-0)
 
 ## Installation
   - In Your terminal write :
