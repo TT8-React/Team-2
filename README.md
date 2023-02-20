@@ -1,4 +1,4 @@
-# Dashboardn 
+# Dashboard 
 ### Team2 project
 ## 📌Links
 - [Live Linke](https://admin-dashboard-react-app23.netlify.app/)
