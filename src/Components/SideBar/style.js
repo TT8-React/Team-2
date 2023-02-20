@@ -28,7 +28,7 @@ export const SideItem = styled(Link)`
     background-color: #d9d9d9;
   }
 `;
-export const MenuItem = styled.p`
+export const MenuItem = styled.div`
   cursor: pointer;
   width: 70%;
   margin: 0.5rem 0;

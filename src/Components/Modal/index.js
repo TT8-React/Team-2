@@ -82,7 +82,11 @@ const MModal = () => {
           >
             <Link
               to={`${PATHS.CUSTOMIZE}`}
-              style={{ textDecoration: "none", color: "#fff" }}
+              style={{
+                textDecoration: "none",
+                color: "#fff",
+                fontWeight: "bold",
+              }}
             >
               Continue for next step
             </Link>
