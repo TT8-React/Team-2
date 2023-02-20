@@ -4,10 +4,12 @@ import { Text } from "./style";
 const TextForm = ({ text, spanText, linkTo }) => {
   return (
     <Text>
-      {text}
+      {" "}
+      {text}{" "}
       <ALink to={linkTo} color="#FF0000">
-        {spanText}
-      </ALink>
+        {" "}
+        {spanText}{" "}
+      </ALink>{" "}
     </Text>
   );
 };

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 // material ui
 import { Button, Popover, Typography } from "@mui/material";
-//  global  
+//  global
 import { ALink } from "../../global/style";
-import {TbLogout} from "react-icons/tb"
+import { TbLogout } from "react-icons/tb";
 //  paths
 import { PATHS } from "../../Routes";
 //  components
@@ -29,19 +29,19 @@ const Navbar = ({ path }) => {
       <Flex>
         <PageName>{path}</PageName>
         <Logout>
-        <Avatar onClick={handleClick}>
-          <Button
-            variant="contained"
-            style={{
-              backgroundColor: "transparent",
-              display: "block",
-              height: "95%",
-              minWidth: "46px",
-              borderRadius: "50%",
-            }}
-          />
-        </Avatar>
-        <TbLogout style={{cursor:'pointer'}} onClick={logout} />
+          <Avatar onClick={handleClick}>
+            <Button
+              variant="contained"
+              style={{
+                backgroundColor: "transparent",
+                display: "block",
+                height: "95%",
+                minWidth: "46px",
+                borderRadius: "50%",
+              }}
+            />
+          </Avatar>
+          <TbLogout style={{ cursor: "pointer" }} onClick={logout} />
         </Logout>
         <Popover
           open={open}

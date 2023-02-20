@@ -1,16 +1,17 @@
 import React from "react";
 
-//library
+//  library
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-//components
+//  components
 import WrapperForm from "./../../Components/WrapperForm/index";
 import FormTitle from "./../../Components/FormTitle/index";
 import FormItem from "./../../Components/FormItem/index";
 import FormBtn from "./../../Components/FormBtn/index";
 import { FlexCenter } from "../../global/style";
 import Error from "../../Components/Error";
+
 import { useNavigate } from 'react-router-dom';
 import { PATHS } from './../../Routes/index';
 
@@ -18,6 +19,7 @@ import { PATHS } from './../../Routes/index';
 
 const ForgetPassword = () => {
   const navigate = useNavigate()
+
   //validation
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -30,7 +32,9 @@ const ForgetPassword = () => {
   };
 
   const onSubmit = () => {
+
     navigate(PATHS.VERIFICATION)
+
     console.log("submit");
   };
 
@@ -51,14 +55,14 @@ const ForgetPassword = () => {
           onChange={formik.handleChange}
           value={formik.values.email}
           onBlur={formik.handleBlur}
-        />
+        />{" "}
         {formik.touched.email && formik.errors.email && (
           <Error msg={formik.errors.email} />
-        )}
+        )}{" "}
         <FlexCenter>
           <FormBtn name="SUBMIT" type="submit" />
-        </FlexCenter>
-      </form>
+        </FlexCenter>{" "}
+      </form>{" "}
     </WrapperForm>
   );
 };

@@ -12,9 +12,11 @@ const LoginAuth = lazy(() =>
 const SignUpAuth = lazy(() =>
   import("./../Components/AuthonticationSection/SignUpAuth")
 );
+
 const Verified=lazy(()=>import("./../Pages/Verified/index"));
 const Verification = lazy(()=>import("./../Pages/Verification/index"));
 const ProtectedRoute = lazy(()=>import('../Components/ProtectedRoute'))
+
 
 
 //another pages
@@ -32,9 +34,6 @@ const Sebi = lazy(() => import("../Pages/Reports/Sebi"));
 const Gri = lazy(() => import("../Pages/Reports/Gri"));
 const DataUpload = lazy(() => import("../Pages/DataUpload/Upload"));
 const Customize = lazy(() => import("../Pages/Reports/Customize"));
-
-
-
 
 
 //  paths
@@ -87,4 +86,5 @@ export const router = [
     ]
   },
   {path:'*',element:<h1>Page not found</h1>}
+
 ];

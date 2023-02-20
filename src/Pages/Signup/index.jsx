@@ -85,10 +85,10 @@ const Signup = () => {
             onChange={formik.handleChange}
             value={formik.values.name}
             onBlur={formik.handleBlur}
-          />
+          />{" "}
           {formik.touched.name && formik.errors.name && (
             <Error msg={formik.errors.name} />
-          )}
+          )}{" "}
           <FormItem
             label="Email ID"
             name="email"
@@ -96,10 +96,10 @@ const Signup = () => {
             onChange={formik.handleChange}
             value={formik.values.email}
             onBlur={formik.handleBlur}
-          />
+          />{" "}
           {formik.touched.email && formik.errors.email && (
             <Error msg={formik.errors.email} />
-          )}
+          )}{" "}
           <FormItem
             label="Password"
             name="password"
@@ -107,20 +107,21 @@ const Signup = () => {
             onChange={formik.handleChange}
             value={formik.values.password}
             onBlur={formik.handleBlur}
-          />
+          />{" "}
           {formik.touched.password && formik.errors.password && (
             <Error msg={formik.errors.password} />
-          )}
+          )}{" "}
           <FlexCenter>
             <FormBtn name={loading ? "Loading..." : "Sign up"} type="submit" />
           </FlexCenter>
+
           <TextForm
             text="Already have an account ?"
             spanText="Login"
             linkTo={"/login"}
-          />
-        </form>
-      </WrapperForm>
+          />{" "}
+        </form>{" "}
+      </WrapperForm>{" "}
     </>
   );
 };

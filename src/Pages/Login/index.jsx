@@ -66,10 +66,10 @@ const Login = () => {
           onChange={formik.handleChange}
           value={formik.values.email}
           onBlur={formik.handleBlur}
-        />
+        />{" "}
         {formik.touched.email && formik.errors.email && (
           <Error msg={formik.errors.email} />
-        )}
+        )}{" "}
         <FormItem
           label="Password"
           name="password"
@@ -77,20 +77,20 @@ const Login = () => {
           onChange={formik.handleChange}
           value={formik.values.password}
           onBlur={formik.handleBlur}
-        />
+        />{" "}
         {formik.touched.password && formik.errors.password && (
           <Error msg={formik.errors.password} />
-        )}
+        )}{" "}
         <Text text="Forget password ?" />
         <FlexCenter>
           <FormBtn name={loading ? "Loading...." : "LOGIN"} type="submit" />
-        </FlexCenter>
+        </FlexCenter>{" "}
         <TextForm
           text="Don’t have an account ?"
           spanText="Sign up"
           linkTo={PATHS.SIGNUP}
-        />
-      </form>
+        />{" "}
+      </form>{" "}
     </WrapperForm>
   );
 };
