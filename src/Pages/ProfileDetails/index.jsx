@@ -1,8 +1,14 @@
 import React from "react";
+
+
 import Button from "../../Components/Button";
 import FormItem from "../../Components/FormItem";
+
+
 import { ProfileDetailsData } from "../../MockData/Data";
 import { InputGrid, InputsWraper, TopSection } from "./style";
+
+
 export default function ProfileDetails() {
   return (
     <>

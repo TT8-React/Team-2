@@ -8,4 +8,5 @@ export const Btn=styled.button`
     font-size: ${ props=> props.big ? '30px':'16px'};
     line-height: 19px;
     padding: 10px 16px;
+    cursor:pointer;
 `

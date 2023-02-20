@@ -11,11 +11,15 @@ import FormItem from "./../../Components/FormItem/index";
 import FormBtn from "./../../Components/FormBtn/index";
 import { FlexCenter } from "../../global/style";
 import Error from "../../Components/Error";
-import { useNavigate } from "react-router-dom";
-import { PATHS } from "./../../Routes/index";
+
+import { useNavigate } from 'react-router-dom';
+import { PATHS } from './../../Routes/index';
+
+
 
 const ForgetPassword = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+
   //validation
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -28,7 +32,9 @@ const ForgetPassword = () => {
   };
 
   const onSubmit = () => {
-    navigate(PATHS.VERIFICATION);
+
+    navigate(PATHS.VERIFICATION)
+
     console.log("submit");
   };
 

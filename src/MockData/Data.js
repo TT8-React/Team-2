@@ -89,11 +89,11 @@ export const TransferListDate = [
 ];
 
 export const CompanyDetailsData = [
-  {id: 1, name: 'Name', text: "Lorem ipsum"},
-  {id: 2, name: 'test1', text: "Lorem ipsum"},
-  {id: 3, name: 'test2', text: "Lorem ipsum"},
-  {id: 4, name: 'test3', text: "Lorem ipsum"},
-  {id: 5, name: 'test4', text: "Lorem ipsum"},
-  {id: 6, name: 'test5', text: "Lorem ipsum"},
-  {id: 7, name: 'test6', text: "Lorem ipsum"},
+  { id: 1, name: "Name", text: "Lorem ipsum" },
+  { id: 2, name: "test1", text: "Lorem ipsum" },
+  { id: 3, name: "test2", text: "Lorem ipsum" },
+  { id: 4, name: "test3", text: "Lorem ipsum" },
+  { id: 5, name: "test4", text: "Lorem ipsum" },
+  { id: 6, name: "test5", text: "Lorem ipsum" },
+  { id: 7, name: "test6", text: "Lorem ipsum" },
 ];

@@ -1,6 +1,9 @@
 import { Suspense } from "react";
+
 import AuthProvider from "./Context/AuthContext";
 import Spinner from "./Components/Spinner";
+
+
 import { router as routes } from "./Routes/index";
 import { useRoutes } from "react-router-dom";
 

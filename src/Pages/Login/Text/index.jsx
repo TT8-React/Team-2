@@ -6,7 +6,7 @@ const Text = ({ text }) => {
   return (
     <div>
       <TextStyle>
-        <Link to={PATHS.FORGETPASSWORD}>{text}</Link>
+        <Link to={PATHS.FORGET_PASSWORD}>{text}</Link>
       </TextStyle>
     </div>
   );

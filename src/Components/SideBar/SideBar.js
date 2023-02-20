@@ -31,7 +31,7 @@ const SideBar = () => {
             active={activeItem === "company_details"}
             onClick={() => handleItemClick("company_details")}
           >
-            <ALink to={PATHS.COMPANYDETAILS}> Company details</ALink>
+            <ALink to={PATHS.COMPANY_DETAILS}> Company details</ALink>
           </SideItem>
           <SideItem
             active={activeItem === "report"}
@@ -47,7 +47,7 @@ const SideBar = () => {
           </SideItem>
           {openReport && (
             <MenuItem>
-              <ALink to={PATHS.MYREPORT}>My Report</ALink>
+              <ALink to={PATHS.MY_REPORT}>My Report</ALink>
             </MenuItem>
           )}
           <SideItem

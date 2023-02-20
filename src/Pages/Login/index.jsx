@@ -11,13 +11,16 @@ import FormBtn from "./../../Components/FormBtn/index";
 import Error from "../../Components/Error";
 import Text from "./Text";
 
+
 import { FlexCenter } from "./../../global/style";
+
+
 import { API_URL } from "./../../config/api";
 import { PATHS } from "../../Routes";
-import useAuth from "../../hooks/useAuth";
+import { useAuthContext } from "./../../Context/AuthContext";
 
 const Login = () => {
-  const { loading, setLoading, setToken, login } = useAuth();
+  const { loading, setLoading, setToken, login } = useAuthContext();
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -28,22 +31,18 @@ const Login = () => {
 
   const onSubmit = async ({ email, password }) => {
     setLoading(true);
-    try {
-      const res = await axios.post(`${API_URL}/users/login`, {
-        email,
-        password,
-      });
+    const res = await axios
+      .post(`${API_URL}/users/login`, { email, password })
+      .catch((err) => {
+        console.log(err.message);
+      })
+      .finally(() => setLoading(false));
 
-      if (res) {
-        console.log("you are logged in successfully");
-        setToken(res.data.token);
-        localStorage.setItem("token", res.data.token);
-        login();
-      }
-    } catch (err) {
-      console.log(err.message);
-    } finally {
-      setLoading(false);
+    if (res) {
+      console.log("you are logged in successfully");
+      setToken(res.data.token);
+      localStorage.setItem("token", res.data.token);
+      login();
     }
   };
 

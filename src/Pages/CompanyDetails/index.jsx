@@ -1,6 +1,8 @@
 import React from "react";
+
 import Button from "../../Components/Button";
 import { CompanyDetailsData } from "../../MockData/Data";
+
 import { Container } from "./style";
 
 export default function CompanyDetails() {

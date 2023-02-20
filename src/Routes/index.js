@@ -1,5 +1,7 @@
+
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
+
 
 // pages
 
@@ -10,9 +12,12 @@ const LoginAuth = lazy(() =>
 const SignUpAuth = lazy(() =>
   import("./../Components/AuthonticationSection/SignUpAuth")
 );
-const Verified = lazy(() => import("./../Pages/Verified/index"));
-const Verification = lazy(() => import("./../Pages/Verification/index"));
-const ProtectedRoute = lazy(() => import("../Components/ProtectedRoute"));
+
+const Verified=lazy(()=>import("./../Pages/Verified/index"));
+const Verification = lazy(()=>import("./../Pages/Verification/index"));
+const ProtectedRoute = lazy(()=>import('../Components/ProtectedRoute'))
+
+
 
 //another pages
 const Dashboard = lazy(() => import("../Pages/Dashboard"));
@@ -29,6 +34,7 @@ const Sebi = lazy(() => import("../Pages/Reports/Sebi"));
 const Gri = lazy(() => import("../Pages/Reports/Gri"));
 const DataUpload = lazy(() => import("../Pages/DataUpload/Upload"));
 const Customize = lazy(() => import("../Pages/Reports/Customize"));
+
 
 //  paths
 export const PATHS = {
@@ -51,6 +57,7 @@ export const PATHS = {
   VERIFICATION: "/verification",
   VERIFY: "/verify",
 };
+
 
 export const router = [
   { index: "true", element: <Navigate to={PATHS.LOGIN} /> },
@@ -76,7 +83,8 @@ export const router = [
       { path: PATHS.GRI, element: <Gri /> },
       { path: PATHS.CUSTOMIZE, element: <Customize /> },
       { path: PATHS.REPORT, element: <Report /> },
-    ],
+    ]
   },
-  { path: "*", element: <h1>Page not found</h1> },
+  {path:'*',element:<h1>Page not found</h1>}
+
 ];
