@@ -1,16 +1,19 @@
 import React from "react";
 
-//library
+//  library
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-//components
+//  components
 import WrapperForm from "./../../Components/WrapperForm/index";
 import FormTitle from "./../../Components/FormTitle/index";
 import FormItem from "./../../Components/FormItem/index";
 import FormBtn from "./../../Components/FormBtn/index";
 import { FlexCenter } from "../../global/style";
 import Error from "../../Components/ErrorBoundary/index";
+//  Routes
+import { Navigate } from "react-router-dom";
+import { PATHS } from "../../Routes";
 
 const ForgetPassword = () => {
   //validation
@@ -25,8 +28,7 @@ const ForgetPassword = () => {
   };
 
   const onSubmit = (e) => {
-    e.preventDefualt();
-    console.log("submit");
+    Navigate(PATHS.VERIFICATION);
   };
 
   const formik = useFormik({

@@ -19,7 +19,7 @@ import { API_URL } from "./../../config/api";
 import useAuth from "../../hooks/useAuth";
 
 const Signup = () => {
-  const { loading, setLoading, setToken, login } = useAuth();
+  const { isLoading, setIsLoading, setToken, login } = useAuth();
 
   //validation Schema
   const validationSchema = Yup.object({
@@ -48,7 +48,7 @@ const Signup = () => {
 
   const onSubmit = async ({ name, email, password }) => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       const res = await axios.post(`${API_URL}/users/signup`, {
         email,
         password,
@@ -61,7 +61,7 @@ const Signup = () => {
     } catch (err) {
       console.log(err.message);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -110,7 +110,10 @@ const Signup = () => {
             <Error msg={formik.errors.password} />
           )}{" "}
           <FlexCenter>
-            <FormBtn name={loading ? "Loading" : "Sign up"} />{" "}
+            <FormBtn
+              name={isLoading ? "Loading..." : "Sign up"}
+              type="submit"
+            />
           </FlexCenter>{" "}
           <TextForm
             text="Already have an account ?"

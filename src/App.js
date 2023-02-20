@@ -1,18 +1,19 @@
 import { Suspense } from "react";
+//  context
 import AuthProvider from "./Context/AuthContext";
-import useAuth from "./hooks/useAuth";
-import { Authorized, NotAuthorized } from "./Routes";
+//  Routes
+import { router as routes } from "./Routes/index";
+import { useRoutes } from "react-router-dom";
+//  Spinner
+import { Spinner } from "./global/style";
 
 function App() {
-  const { isAuthorized } = useAuth();
-
+  const router = useRoutes(routes);
   return (
     <div className="App">
-      <Suspense fallback={<div>Loading...</div>}>
-        <AuthProvider>
-          {isAuthorized ? <Authorized /> : <NotAuthorized />}
-        </AuthProvider>
-      </Suspense>
+      <AuthProvider>
+        <Suspense fallback={<Spinner />}>{router}</Suspense>
+      </AuthProvider>
     </div>
   );
 }
