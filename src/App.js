@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-//  context
+
 import AuthProvider from "./Context/AuthContext";
 import Spinner from "./Components/Spinner";
 

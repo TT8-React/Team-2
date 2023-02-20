@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useAuth = () => {
-  const [loading, setloading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [authorized, setAuthorized] = useState(false);
   const [token, setToken] = useState("");
 
@@ -25,7 +25,7 @@ const useAuth = () => {
     authorized,
     setAuthorized,
     loading,
-    setloading,
+    setLoading,
     token,
     setToken,
     logout,

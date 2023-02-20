@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
 
+//  Pages
 // Auth pages
 const LoginAuth = lazy(() =>
   import("./../Components/AuthonticationSection/LogInAuth")
@@ -12,7 +13,7 @@ const Verified = lazy(() => import("./../Pages/Verified/index"));
 const Verification = lazy(() => import("./../Pages/Verification/index"));
 const ProtectedRoute = lazy(() => import("../Components/ProtectedRoute"));
 
-// App pages
+// another pages
 const Dashboard = lazy(() => import("../Pages/Dashboard"));
 const ForgetPassword = lazy(() => import("../Pages/ForgetPassword"));
 const MyReport = lazy(() => import("../Pages/Reports/MyReport"));
@@ -49,7 +50,7 @@ export const PATHS = {
   VERIFICATION: "/verification",
   VERIFY: "/verify",
 };
-//  router
+
 export const router = [
   { index: "true", element: <Navigate to={PATHS.LOGIN} /> },
   { path: PATHS.LOGIN, element: <LoginAuth /> },

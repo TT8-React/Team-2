@@ -16,11 +16,10 @@ import Error from "../../Components/ErrorBoundary";
 
 //  API
 import { API_URL } from "./../../config/api";
-import useAuth from "../../hooks/useAuth";
+import { useAuthContext } from "../../Context/AuthContext";
 
 const Signup = () => {
-  const { isLoading, setIsLoading, setToken, login } = useAuth();
-
+  const { loading, setLoading, setToken, login } = useAuthContext();
   //validation Schema
   const validationSchema = Yup.object({
     name: Yup.string().required("Please Enter your name"),
@@ -47,24 +46,21 @@ const Signup = () => {
   };
 
   const onSubmit = async ({ name, email, password }) => {
-    try {
-      setIsLoading(true);
-      const res = await axios.post(`${API_URL}/users/signup`, {
-        email,
-        password,
-        name,
-      });
+    setLoading(true);
+    const res = await axios
+      .post(`${API_URL}/users/signup`, { email, password, name })
+      .catch((err) => {
+        console.log(err.message);
+      })
+      .finally(() => setLoading(false));
+
+    if (res) {
       console.log("you are logged in successfully");
       setToken(res.data.token);
       localStorage.setItem("token", res.data.token);
       login();
-    } catch (err) {
-      console.log(err.message);
-    } finally {
-      setIsLoading(false);
     }
   };
-
   const formik = useFormik({
     initialValues,
     onSubmit,
@@ -110,10 +106,7 @@ const Signup = () => {
             <Error msg={formik.errors.password} />
           )}{" "}
           <FlexCenter>
-            <FormBtn
-              name={isLoading ? "Loading..." : "Sign up"}
-              type="submit"
-            />
+            <FormBtn name={loading ? "Loading..." : "Sign up"} type="submit" />
           </FlexCenter>{" "}
           <TextForm
             text="Already have an account ?"
