@@ -29,6 +29,7 @@ const ForgetPassword = () => {
 
   const onSubmit = () => {
     navigate(PATHS.VERIFICATION);
+    console.log("submit");
   };
 
   const formik = useFormik({
