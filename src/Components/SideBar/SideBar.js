@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { NavLink } from "../../global/style";
+
+//  assets
 import closed from "../../Assets/ClosedArrow.png";
 import opened from "../../Assets/OpenedArrow.png";
+//  paths
 import { PATHS } from "../../Routes";
+//  styles
 import { Side, Content, Items, SideItem, Logo, MenuItem } from "./style";
 
 const SideBar = () => {

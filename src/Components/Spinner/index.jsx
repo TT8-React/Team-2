@@ -1,17 +1,22 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 const Spinner = () => {
   return (
     <Wrapper>
-        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div className="lds-roller">
+        {" "}
+        <div> </div> <div> </div> <div> </div> <div> </div> <div> </div>
+        <div> </div> <div> </div>
+        <div> </div>{" "}
+      </div>{" "}
     </Wrapper>
-  )
-}
-export const Wrapper=styled.div`
-display:flex;
-justify-content:center;
-margin-top:200px;
-.lds-roller {
+  );
+};
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  .lds-roller {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -95,5 +100,5 @@ margin-top:200px;
       transform: rotate(360deg);
     }
   }
-`
-export default Spinner
+`;
+export default Spinner;
