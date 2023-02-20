@@ -5,7 +5,7 @@ import { style1 } from "./style";
 import { Card, Square } from "../ReportCard/style";
 import FormItem from "../FormItem/index";
 import { Link } from "react-router-dom";
-import { PATHS } from './../../Routes/index';
+import { PATHS } from "./../../Routes/index";
 
 const MModal = () => {
   const [open, setOpen] = React.useState(false);
@@ -81,7 +81,7 @@ const MModal = () => {
             }}
           >
             <Link
-              to={`${PATHS.DASHBOARD}/${PATHS.CUSTOMIZE}`}
+              to={`${PATHS.CUSTOMIZE}`}
               style={{ textDecoration: "none", color: "#fff" }}
             >
               Continue for next step
