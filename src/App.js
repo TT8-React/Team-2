@@ -1,11 +1,10 @@
 import { Suspense } from "react";
 //  context
 import AuthProvider from "./Context/AuthContext";
-//  Routes
+import Spinner from "./Components/Spinner";
+
 import { router as routes } from "./Routes/index";
 import { useRoutes } from "react-router-dom";
-//  Spinner
-import { Spinner } from "./global/style";
 
 function App() {
   const router = useRoutes(routes);

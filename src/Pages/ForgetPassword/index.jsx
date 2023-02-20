@@ -12,10 +12,11 @@ import FormBtn from "./../../Components/FormBtn/index";
 import { FlexCenter } from "../../global/style";
 import Error from "../../Components/ErrorBoundary/index";
 //  Routes
-import { Navigate } from "react-router-dom";
-import { PATHS } from "../../Routes";
+import { useNavigate } from "react-router-dom";
+import { PATHS } from "./../../Routes/index";
 
 const ForgetPassword = () => {
+  const navigate = useNavigate();
   //validation
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -27,8 +28,9 @@ const ForgetPassword = () => {
     email: "",
   };
 
-  const onSubmit = (e) => {
-    Navigate(PATHS.VERIFICATION);
+  const onSubmit = () => {
+    navigate(PATHS.VERIFICATION);
+    console.log("submit");
   };
 
   const formik = useFormik({
