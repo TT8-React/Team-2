@@ -3,6 +3,8 @@ import { PATHS } from "../../Routes";
 import { useAuthContext } from "../../Context/AuthContext";
 import { useLocation } from "react-router-dom";
 import Layout from "../Layout/index";
+import { Suspense } from "react";
+import Spinner from "../Spinner";
 const ProtectedRoute = () => {
   const { pathname } = useLocation();
 
@@ -18,7 +20,9 @@ const ProtectedRoute = () => {
       {authorized ? (
         <>
           <Layout path={getPageName(pathname)}>
+          <Suspense fallback={<Spinner />}>
             <Outlet />
+            </Suspense>
           </Layout>
         </>
       ) : (
