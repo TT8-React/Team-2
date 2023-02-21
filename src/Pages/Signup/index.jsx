@@ -56,7 +56,6 @@ const Signup = () => {
       .finally(() => setLoading(false));
 
     if (res) {
-      console.log("you are logged in successfully");
       setToken(res.data.token);
       localStorage.setItem("token", res.data.token);
       login();
@@ -109,7 +108,7 @@ const Signup = () => {
           )}{" "}
           <FlexCenter>
             <FormBtn name={loading ? <Spinner /> : "Sign up"} type="submit" />
-          </FlexCenter>
+          </FlexCenter>{" "}
           <TextForm
             text="Already have an account ?"
             spanText="Login"

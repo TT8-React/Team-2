@@ -39,7 +39,6 @@ const Login = () => {
       .finally(() => setLoading(false));
 
     if (res) {
-      console.log("you are logged in successfully");
       setToken(res.data.token);
       localStorage.setItem("token", res.data.token);
       login();
