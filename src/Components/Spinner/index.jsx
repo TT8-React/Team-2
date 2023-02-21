@@ -3,12 +3,14 @@ import styled from "styled-components";
 const Spinner = () => {
   return (
     <Wrapper>
+
       <div className="lds-roller">
         {" "}
         <div> </div> <div> </div> <div> </div> <div> </div> <div> </div>
         <div> </div> <div> </div>
         <div> </div>{" "}
       </div>{" "}
+
     </Wrapper>
   );
 };

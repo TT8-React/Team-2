@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -19,6 +19,7 @@ import { useAuthContext } from "./../../Context/AuthContext";
 
 const Login = () => {
   const { loading, setLoading, setToken, login } = useAuthContext();
+  const [errors,setError]=useState();
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -32,7 +33,8 @@ const Login = () => {
     const res = await axios
       .post(`${API_URL}/users/login`, { email, password })
       .catch((err) => {
-        console.log(err.message);
+        setError(err.response.data.message)
+        console.log(err.response.data.message);
       })
       .finally(() => setLoading(false));
 
@@ -54,6 +56,7 @@ const Login = () => {
 
   return (
     <WrapperForm>
+        {errors&&<Error msg={errors}/>}
       <form onSubmit={formik.handleSubmit}>
         <FormTitle title="LOGIN" />
         <FormItem
