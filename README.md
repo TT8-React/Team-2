@@ -1,7 +1,7 @@
 # Dashboard 
 ### Team2 project
 ## 📌Links
-- [Live Link](https://admin-dashboard-react-app23.netlify.app/)
+- [Live Link](https://admin-dashboard-react-app-v1.netlify.app/)
 
 - [Figma Link](https://www.figma.com/file/nEDFhVnanFFEYDAbM8Q0ZD/Admin-(Community)?node-id=0%3A1&t=28BFctEaIhynwF36-0)
 
