@@ -6,8 +6,12 @@ import FormItem from "../FormItem/index";
 import { Container, FormElement } from "./style";
 
 const TowColForm = ({ data }) => {
+  const handleSubmit =(e)=>{
+    e.preventDefault();
+    console.log('submit')
+  }
   return (
-    <FormElement>
+    <FormElement onSubmit={handleSubmit}>
       <Container>
         {data?.map((item) => {
           return (
@@ -16,7 +20,7 @@ const TowColForm = ({ data }) => {
         })}
       </Container>
       <div style={{ margin: "1rem 33%" }}>
-        <FormBtn name="Submit" />
+        <FormBtn name="Submit"/>
       </div>
     </FormElement>
   );

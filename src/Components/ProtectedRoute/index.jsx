@@ -7,8 +7,10 @@ const ProtectedRoute = () => {
   const { pathname } = useLocation();
 
   const getPageName = (pathname) => {
-    let str = pathname;
-    return str.split("/").length < 3 ? str.split("/")[1] : str.split("/")[2];
+    let str = pathname.split("/");
+    str=str.length<3?str[1]:str[2];
+    str=str==='manual'?'dataUplaod':str;
+    return str.split(/(?=[A-Z])/).join(" ")
   };
   const { authorized } = useAuthContext();
   return (
